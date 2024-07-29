@@ -1,0 +1,11 @@
+@import "./base.module.scss";
+@import "../../../../styles/rating-stars-breakpoints";
+
+@media (min-width: $breakpoint-1) {
+  .star {
+    width: $star-size;
+    height: $star-size;
+    margin: $star-size-margin;
+    margin-top: 10px;
+  }
+}

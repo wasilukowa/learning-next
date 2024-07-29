@@ -1,0 +1,8 @@
+@import "../../../../styles/rating-stars-variables";
+
+.starAverage {
+  width: $star-size;
+  height: $star-size;
+  padding: $star-size-margin;
+  margin-top: 6px;
+}

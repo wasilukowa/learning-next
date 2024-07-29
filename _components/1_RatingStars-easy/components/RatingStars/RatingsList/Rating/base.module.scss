@@ -1,0 +1,36 @@
+@import '../../../../styles/rating-stars-variables';
+
+.wrapper {
+  margin-bottom: 5px;
+  padding: 12px;
+
+  box-sizing: border-box;
+  background-color: #ececec;
+
+  text-decoration: none;
+  color: rgb(102, 93, 93);
+
+  &Header {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column-reverse;
+
+    &Name {
+      font-family: var(--font-main);
+      font-size: font-size-m;
+    }
+
+    &Stars {
+      display: inline-block;
+    }
+  }
+
+  &TextComment {
+    font-family: var(--font-main);
+    font-size: $font-size-s;
+    line-height: calc(1.5 * $font-size-s);
+
+    padding-left: 2px;
+    padding-right: 2px;
+  }
+}

@@ -1,0 +1,20 @@
+@import "./base.module.scss";
+@import "../../../../styles/rating-stars-breakpoints";
+
+@media (min-width: $breakpoint-2) {
+  .wrapper {
+    &Header {
+      flex-direction: row;
+      align-items: center;
+
+      &Name {
+        margin-left: 10px;
+        font-size: $font-size-l;
+      }
+    }
+    &TextComment {
+      font-size: $font-size-m;
+      line-height: calc(1.5 * $font-size-m);
+    }
+  }
+}

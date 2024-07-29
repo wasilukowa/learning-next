@@ -1,0 +1,9 @@
+@import './base.module.scss';
+
+@media (min-width: 600px) {
+  .navigationItem {
+    min-width: 200px;
+    width: auto;
+    margin-right: 5px;
+  }
+}

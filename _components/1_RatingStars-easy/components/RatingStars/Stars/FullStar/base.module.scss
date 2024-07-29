@@ -1,0 +1,11 @@
+@import "../../../../styles/rating-stars-variables";
+
+.wrapper {
+  width: $star-size;
+  height: $star-size;
+  margin: $star-size-margin;
+
+  path {
+    fill: $full-star-color;
+  }
+}
