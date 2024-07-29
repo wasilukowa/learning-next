@@ -1,11 +1,9 @@
-@import '../styles/fonts';
-
 h1 {
-  font-family: var(--font-main);
+  font-family: var(--font-roboto);
 }
 
 p {
-  font-family: Arial;
+  font-family: var(--font-roboto);
 }
 // body {
 //   font-family: $font-grandstander;

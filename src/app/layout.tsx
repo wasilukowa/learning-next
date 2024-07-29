@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 //   variable: '--font-main',
 // });
 
-import { grandstander } from './ui/fonts';
+import { roboto, roboto_condensed } from './ui/fonts';
 
 export default function RootLayout({
   children,
@@ -25,7 +25,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${grandstander.variable}`}>
+    <html
+      lang="en"
+      className={`${roboto.variable} ${roboto_condensed.variable}`}
+    >
       <body>
         <h1>HELLO WORLD</h1>
         <Navigation />
