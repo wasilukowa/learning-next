@@ -1,0 +1,11 @@
+@import '../../styles/use-geo-variables';
+
+.wrapper {
+  font-family: Arial;
+
+  &Button {
+    font-family: Arial;
+    border: none;
+    outline: none;
+  }
+}
