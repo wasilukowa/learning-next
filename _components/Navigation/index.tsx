@@ -3,42 +3,18 @@ import { NavigationItem } from './NavigationItem';
 import style from './rwd.module.scss';
 const { wrapper, tableOfContent } = style;
 
-type TLink = {
-  key: string;
-  name: string;
-  url: string;
-};
+import data from '../../data/homePageData.json';
+import { createRoutesObject } from '../../utils';
 
-const links: TLink[] = [
-  {
-    key: 'nav-home',
-    name: 'HOME',
-    url: '/',
-  },
-  {
-    key: 'nav-rating-stars',
-    name: 'RATING STARS',
-    url: '/rating-stars',
-  },
-  {
-    key: 'nav-use-memo-usage',
-    name: 'USE MEMO USAGE',
-    url: '/use-memo-state',
-  },
-  {
-    key: 'nav-use-geo',
-    name: 'USE GEO',
-    url: '/use-geo',
-  },
-];
+const routes = createRoutesObject(data);
 
 export const Navigation = () => {
   return (
     <nav className={wrapper}>
       <ul className={tableOfContent}>
-        {links.map((link) => {
+        {routes.map((route) => {
           return (
-            <NavigationItem key={link.key} name={link.name} url={link.url} />
+            <NavigationItem key={route.id} name={route.name} url={route.url} />
           );
         })}
       </ul>

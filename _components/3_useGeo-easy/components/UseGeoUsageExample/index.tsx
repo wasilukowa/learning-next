@@ -6,7 +6,7 @@ import { UseGeoUsageExampleProps } from './types';
 import style from './rwd.module.scss';
 import { Coordinates } from './Coordinates';
 import { useEffect, useState } from 'react';
-const { wrapper, buttonGlobal } = style;
+const { wrapper, wrapperButton } = style;
 
 export const UseGeoUsageExample = ({ labels }: UseGeoUsageExampleProps) => {
   const {
@@ -34,7 +34,7 @@ export const UseGeoUsageExample = ({ labels }: UseGeoUsageExampleProps) => {
 
   return (
     <div className={wrapper}>
-      <button className={buttonGlobal} onClick={toggleListening}>
+      <button className={wrapperButton} onClick={toggleListening}>
         {correctTextByLocation}
       </button>
       {isBusy && <p> {loadingLabel} </p>}

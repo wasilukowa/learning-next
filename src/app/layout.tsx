@@ -1,8 +1,10 @@
 import type { Metadata } from 'next';
+import { Navigation } from '../../_components/Navigation';
 
 import './globals.scss';
 
-import { Navigation } from '../../_components/Navigation';
+import styles from './rwd.module.scss';
+const { wrapper } = styles;
 
 export const metadata: Metadata = {
   title: 'JS Gladiators Academy',
@@ -22,9 +24,8 @@ export default function RootLayout({
       className={`${roboto.variable} ${roboto_condensed.variable}`}
     >
       <body>
-        <h1>HELLO WORLD</h1>
         <Navigation />
-        <main>{children}</main>
+        <main className={wrapper}>{children}</main>
       </body>
     </html>
   );

@@ -1,26 +1,29 @@
-// @import '../../../src/styles/variables';
+@import '../../../src/app//ui/variables';
 
 .navigationItem {
-  text-decoration: none;
-  margin-bottom: 5px;
-  width: 100%;
-  text-align: center;
-
   flex-grow: 1;
 
+  width: 100%;
+  margin-bottom: 5px;
+
+  text-decoration: none;
+  text-align: center;
+
   &Link {
-    line-height: 25px;
+    display: block;
+
+    padding: 5px 10px;
+
+    background-color: $color-secondary;
+
     font-size: 16px;
     text-decoration: none;
-    padding: 5px 10px;
-    display: block;
-    background-color: grey;
-    color: black;
-
-    // font-family: $font-grandstander;
+    line-height: 25px;
+    color: $color-dark-secondary;
 
     &:hover {
-      background-color: pink;
+      background-color: $color-main;
+      transition-duration: 0.3s;
     }
   }
 }

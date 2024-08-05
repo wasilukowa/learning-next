@@ -1,9 +1,12 @@
+@import '../../src/app/ui/variables';
+
 .wrapper {
+  margin-top: 20px;
   padding-bottom: 20px;
-  box-sizing: border-box;
 
   .tableOfContent {
-    font-family: var(--font-roboto-condensed);
+    font-family: var(--font-roboto);
+    color: $color-dark;
     font-size: 20px;
     font-weight: bold;
 
