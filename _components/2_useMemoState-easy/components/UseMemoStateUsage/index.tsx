@@ -1,11 +1,10 @@
 'use client';
 
-import { useMemoState } from '../../hooks/useMemoState';
-
 import style from './rwd.module.scss';
 
-const { wrapper, buttonGlobal } = style;
+const { wrapper, wrapperButton } = style;
 
+import { UseUseMemoStateUsage } from './useUseMemoStateUsage';
 import { UseMemoStateUsageProps } from './types';
 
 export const UseMemoStateUsage = ({
@@ -14,45 +13,45 @@ export const UseMemoStateUsage = ({
   array,
   string,
 }: UseMemoStateUsageProps) => {
-  const [v1, setter1] = useMemoState(number.initialValue);
-  const [v2, setter2] = useMemoState(object.initialValue);
-  const [v3, setter3] = useMemoState(array.initialValue);
-  const [v4, setter4] = useMemoState(string.initialValue);
+  const {
+    infoReference,
+    showRenderingInfo,
+    handleNumberVal,
+    handleChangeToObject,
+    handleArrVal,
+    handleStringVal,
+  } = UseUseMemoStateUsage(number, object, array, string);
 
-  const handleNumberVal = () => {
-    setter1(number.newValue);
-  };
-
-  const handleChangeToObject = () => {
-    setter2(object.newValue);
-  };
-
-  const handleArrVal = () => {
-    setter3(array.newValue);
-  };
-
-  const handleStringVal = () => {
-    setter4(string.newValue);
-  };
+  showRenderingInfo();
 
   return (
     <div className={wrapper}>
-      <button className={buttonGlobal} onClick={handleNumberVal}>
+      <button
+        className={`${wrapperButton} button-default`}
+        onClick={handleNumberVal}
+      >
         {number.buttonLabel}
       </button>
-      <br />
-      <button className={buttonGlobal} onClick={handleChangeToObject}>
+      <button
+        className={`${wrapperButton} button-default`}
+        onClick={handleChangeToObject}
+      >
         {object.buttonLabel}
       </button>
-      <br />
-      <button className={buttonGlobal} onClick={handleArrVal}>
+      <button
+        className={`${wrapperButton} button-default`}
+        onClick={handleArrVal}
+      >
         {array.buttonLabel}
       </button>
-      <br />
-      <button className={buttonGlobal} onClick={handleStringVal}>
+      <button
+        className={`${wrapperButton} button-default`}
+        onClick={handleStringVal}
+      >
         {string.buttonLabel}
       </button>
-      {/* {console.log("RENDERS...")} */}
+      <p>TUTAJ INFO O RENDEROWANIU:</p>
+      <p ref={infoReference}></p>
     </div>
   );
 };

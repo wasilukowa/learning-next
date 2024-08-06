@@ -6,13 +6,20 @@ body {
 }
 
 .button-default {
-  padding: 10px 20px;
   min-width: 150px;
+  padding: 10px 30px;
+
+  border: 2px solid white;
+  outline: none;
+
   font-family: $font-roboto;
-  background-color: $color-tertiary;
+  font-weight: 600;
   color: $color-light;
+
+  background-color: $color-tertiary;
 
   &:hover {
     background-color: darken($color: $color-tertiary, $amount: 10%);
+    border: 2px solid darken($color: $color-tertiary, $amount: 15%);
   }
 }

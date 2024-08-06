@@ -1,8 +1,12 @@
 .wrapper {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 
-  button {
-    margin-right: 10px;
+  width: 100%;
+  padding-top: 40px;
+
+  &Button {
+    margin: 0 10px 10px 0;
   }
 }
