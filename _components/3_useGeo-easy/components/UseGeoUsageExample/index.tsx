@@ -1,11 +1,12 @@
 'use client';
 
-import { useGeo } from '../../hooks/useGeo';
+import { useGeo } from './useGeo';
 import { UseGeoUsageExampleProps } from './types';
 
-import style from './rwd.module.scss';
 import { Coordinates } from './Coordinates';
 import { useEffect, useState } from 'react';
+
+import style from './rwd.module.scss';
 const { wrapper, wrapperButton } = style;
 
 export const UseGeoUsageExample = ({ labels }: UseGeoUsageExampleProps) => {
@@ -32,9 +33,15 @@ export const UseGeoUsageExample = ({ labels }: UseGeoUsageExampleProps) => {
     return <p>{errorMessage}</p>;
   }
 
+  const longitude = location.longitude ? location.longitude : '';
+  const latitude = location.latitude ? location.latitude : '';
+
   return (
     <div className={wrapper}>
-      <button className={wrapperButton} onClick={toggleListening}>
+      <button
+        className={`${wrapperButton} button-default`}
+        onClick={toggleListening}
+      >
         {correctTextByLocation}
       </button>
       {isBusy && <p> {loadingLabel} </p>}
@@ -42,8 +49,8 @@ export const UseGeoUsageExample = ({ labels }: UseGeoUsageExampleProps) => {
         <Coordinates
           longitudeLabel={longitudeLabel}
           latitudeLabel={latitudeLabel}
-          longitude={location.longitude}
-          latitude={location.latitude}
+          longitude={longitude}
+          latitude={latitude}
         />
       )}
     </div>

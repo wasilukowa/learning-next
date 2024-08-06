@@ -1,5 +1,18 @@
 @import './ui/reset';
+@import './ui/variables';
 
 body {
   font-family: var(--font-roboto);
+}
+
+.button-default {
+  padding: 10px 20px;
+  min-width: 150px;
+  font-family: $font-roboto;
+  background-color: $color-tertiary;
+  color: $color-light;
+
+  &:hover {
+    background-color: darken($color: $color-tertiary, $amount: 10%);
+  }
 }

@@ -1,11 +1,11 @@
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback } from 'react';
 
-import { getLocation } from "../utils";
+import { getLocation } from '../../utils';
 
-import { TCoordinates } from "../types";
-import { UseGeoReturn } from "./types";
+import { TCoordinates } from '../UseGeoUsageExample/types';
+import { TUseGeo } from './types';
 
-export const useGeo = (): UseGeoReturn => {
+export const useGeo: TUseGeo = () => {
   const [isGeoListening, setIsGeoListening] = useState(false);
 
   const [isBusy, setIsBusy] = useState(false);
@@ -13,11 +13,11 @@ export const useGeo = (): UseGeoReturn => {
   const [location, setCoordinates] = useState<TCoordinates>({
     longitude: null,
     latitude: null,
-    error: "",
+    error: '',
   });
 
   useEffect(() => {
-    if (typeof window === "undefined") return;
+    if (typeof window === 'undefined') return;
 
     if (isGeoListening) {
       getLocation()
@@ -25,14 +25,14 @@ export const useGeo = (): UseGeoReturn => {
           setCoordinates({
             longitude: location.longitude,
             latitude: location.latitude,
-            error: "",
+            error: '',
           }),
         )
         .catch((error) => {
           setCoordinates((prevState) => {
             return {
               ...prevState,
-              error: "Something went wrong. Please try again later..." + error,
+              error: 'Something went wrong. Please try again later...' + error,
             };
           });
         })

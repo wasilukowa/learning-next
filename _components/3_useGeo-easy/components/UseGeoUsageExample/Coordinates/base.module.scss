@@ -1,12 +1,13 @@
 @import '../../../styles/use-geo-variables';
 
 .wrapper {
-  font-family: Arial;
-  font-size: 24px;
+  font-family: $font-roboto;
+  font-size: 22px;
 
   &Label {
     font-weight: 400;
     padding-top: 20px;
+    padding-bottom: 10px;
   }
 
   &Coordinate {
