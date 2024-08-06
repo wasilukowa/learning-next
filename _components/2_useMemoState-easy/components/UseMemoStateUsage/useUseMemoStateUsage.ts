@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useMemo, useRef } from 'react';
+import { useState, useMemo, useRef, useEffect } from 'react';
 import { TUseUseMemoStateUsage } from './types';
 
 var _ = require('lodash');
@@ -24,7 +24,7 @@ export const UseUseMemoStateUsage: TUseUseMemoStateUsage = (
     return [state, memoizedSetter];
   };
 
-  const infoReference = useRef(null);
+  const infoReference = useRef<HTMLDivElement>(null);
 
   const showRenderingInfo = () => {
     const potentialReference = infoReference.current;
@@ -32,7 +32,7 @@ export const UseUseMemoStateUsage: TUseUseMemoStateUsage = (
     if (!isInfoReferenceDefined) return;
 
     const postNode = document.createElement('div');
-    postNode.innerText = 'It renders!!';
+    postNode.innerText = 'Yes!!';
     potentialReference.appendChild(postNode);
   };
 
