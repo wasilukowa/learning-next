@@ -1,9 +1,13 @@
 import { AverageScore } from './AverageScore';
 import { RatingsList } from './RatingsList';
-import { RatingStarsProps } from './types';
-import style from './rwd.module.scss';
+import { TRating } from '../../types';
 
+import style from './rwd.module.scss';
 const { wrapper } = style;
+
+export type RatingStarsProps = {
+  ratings: TRating[];
+};
 
 export const RatingStars = ({ ratings }: RatingStarsProps) => {
   return (
