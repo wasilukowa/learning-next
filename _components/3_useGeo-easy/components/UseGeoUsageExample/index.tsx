@@ -25,16 +25,21 @@ export const UseGeoUsageExample = ({ labels }: UseGeoUsageExampleProps) => {
     setJsEnabled(true);
   }, []);
 
-  const { location, isGeoListening, toggleListening, isBusy } = useGeo();
-
-  const correctTextByLocation = isGeoListening ? buttonOnLabel : buttonOffLabel;
-
   if (!jsEnabled) {
     return <p>{errorMessage}</p>;
   }
 
-  const longitude = location.longitude ? location.longitude : '';
-  const latitude = location.latitude ? location.latitude : '';
+  const {
+    location: { latitude, longitude },
+    isGeoListening,
+    toggleListening,
+    isBusy,
+  } = useGeo();
+  const correctTextByLocation = isGeoListening ? buttonOnLabel : buttonOffLabel;
+
+  const isLongitudeDefined = typeof longitude === 'number';
+  const isLatitudeDefined = typeof latitude === 'number';
+  const areCoordsDefined = isLongitudeDefined && isLatitudeDefined;
 
   return (
     <div className={wrapper}>
@@ -45,7 +50,7 @@ export const UseGeoUsageExample = ({ labels }: UseGeoUsageExampleProps) => {
         {correctTextByLocation}
       </button>
       {isBusy && <p> {loadingLabel} </p>}
-      {isGeoListening && (
+      {isGeoListening && areCoordsDefined && (
         <Coordinates
           longitudeLabel={longitudeLabel}
           latitudeLabel={latitudeLabel}

@@ -4,7 +4,7 @@ import style from './rwd.module.scss';
 
 const { wrapper, wrapperButton } = style;
 
-import { UseUseMemoStateUsage } from './useUseMemoStateUsage';
+import { useMemoState } from './useUseMemoStateUsage';
 import { UseMemoStateUsageProps } from './types';
 
 export const UseMemoStateUsage = ({
@@ -20,7 +20,9 @@ export const UseMemoStateUsage = ({
     handleChangeToObject,
     handleArrVal,
     handleStringVal,
-  } = UseUseMemoStateUsage(number, object, array, string);
+  } = useMemoState(number, object, array, string);
+
+  const [example, setExample] = useMemoState({ qwe: 'asd', numericValue: 3 });
 
   showRenderingInfo();
 

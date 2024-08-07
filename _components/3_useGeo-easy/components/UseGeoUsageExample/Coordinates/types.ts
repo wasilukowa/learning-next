@@ -1,6 +1,6 @@
 export type CoordinatesProps = {
   latitudeLabel: string;
   longitudeLabel: string;
-  latitude: string | number;
-  longitude: string | number;
+  latitude: number;
+  longitude: number;
 };

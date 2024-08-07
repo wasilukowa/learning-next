@@ -1,16 +1,15 @@
-import { AverageScore } from "./AverageScore";
-import { RatingsList } from "./RatingsList";
+import { AverageScore } from './AverageScore';
+import { RatingsList } from './RatingsList';
+import { RatingStarsProps } from './types';
+import style from './rwd.module.scss';
 
-import { RatingStarsProps } from "./types";
-
-import style from "./rwd.module.scss";
 const { wrapper } = style;
 
 export const RatingStars = ({ ratings }: RatingStarsProps) => {
   return (
-    <div className={wrapper}>
+    <section className={wrapper}>
       <AverageScore ratings={ratings} />
       <RatingsList ratings={ratings} />
-    </div>
+    </section>
   );
 };

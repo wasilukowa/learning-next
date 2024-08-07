@@ -2,16 +2,15 @@ import { RatingStars } from '../../../_components/1_RatingStars-easy/components'
 
 import data from '../../../data/homePageData.json';
 
-export default function DashboardLayout({
-  children,
-}: {
+export type ReactChildren = {
   children: React.ReactNode;
-}) {
-  const ratingsJson = data['rating-stars'].data.ratings;
+};
 
-  return (
-    <>
-      <RatingStars ratings={ratingsJson} />
-    </>
-  );
+export default function DashboardLayout({ children }: ReactChildren) {
+  // const ratingsJson = data['rating-stars'].data.ratings;
+
+  // tutaj zaciagniecie danych ( jakas promise'a , jakis setTimeout)
+  // AbortController
+
+  return <RatingStars ratings={ratingsJson} />;
 }

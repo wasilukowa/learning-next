@@ -2,14 +2,14 @@
 
 import { useState, useMemo, useRef, useEffect } from 'react';
 import { TUseUseMemoStateUsage } from './types';
+import { isEqual } from 'lodash';
 
-var _ = require('lodash');
-
-export const UseUseMemoStateUsage: TUseUseMemoStateUsage = (
-  number,
-  object,
-  array,
-  string,
+export const useMemoState: TUseUseMemoStateUsage = (
+  value,
+  // number,
+  // object,
+  // array,
+  // string,
 ) => {
   const useMemoState = <T>(initialState: T): [T, (newState: T) => void] => {
     const [state, setState] = useState(initialState);

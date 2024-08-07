@@ -1,25 +1,22 @@
-import { isValidNumberOfStars } from "../../../utils";
-import { FullStar } from "./FullStar";
-import { BlankStar } from "./BlankStar";
-import { StarPercentage } from "./StarPercentage";
+import { isValidNumberOfStars } from '../../../utils';
+import { FullStar } from './FullStar';
+import { BlankStar } from './BlankStar';
+import { StarPercentage } from './StarPercentage';
 
-import { StarsProps } from "./types";
+import { StarsProps } from './types';
 
-import style from "./rwd.module.scss";
+import style from './rwd.module.scss';
 const { wrapper, wrapperForAverage } = style;
 
-export const Stars = ({
-  score,
-  id,
-  isAverageStars,
-}: StarsProps): JSX.Element => {
-  const arePropsValid = isValidNumberOfStars(score);
+// clsx
 
-  if (!arePropsValid) return <></>;
+export const Stars = ({ score, id, isAverageStars }: StarsProps) => {
+  const arePropsValid = isValidNumberOfStars(score);
+  if (!arePropsValid) return null;
 
   const listOfClasses = isAverageStars
     ? `${wrapper} ${wrapperForAverage}`
-    : { wrapper };
+    : wrapper;
 
   // const averageClass = className;
   // 3.47
@@ -30,7 +27,7 @@ export const Stars = ({
   return (
     <div className={listOfClasses}>
       {[...new Array(5)].map((element, index) => {
-        const keyNumber = id + "_" + (index + 1);
+        const keyNumber = id + '_' + (index + 1);
         const isFullStar = index < Math.floor(score);
 
         if (isFullStar) return <FullStar key={keyNumber} />;
@@ -45,4 +42,14 @@ export const Stars = ({
       })}
     </div>
   );
+  // return (
+  //   <div className={listOfClasses}>
+  //     {[...new Array(5)].map((element, index) => {
+  //       const keyNumber = id + "_" + (index + 1);
+  //       const isFullStar = index < Math.floor(score);
+
+  //      return <Star isHalfDrawn={true/false} isEmpty={true}/>
+  //     })}
+  //   </div>
+  // );
 };

@@ -2,7 +2,7 @@ import { UseMemoStateUsage } from '../../../_components/2_useMemoState-easy/comp
 
 import data from '../../../data/homePageData.json';
 
-export default function Page({}) {
+export default function Page() {
   const { number, object, array, string } = data['use-memo'].data;
 
   return (

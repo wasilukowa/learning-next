@@ -16,8 +16,11 @@ export const useGeo: TUseGeo = () => {
     error: '',
   });
 
+  const [error, setError] = useState<string>('');
+
   useEffect(() => {
-    if (typeof window === 'undefined') return;
+    const isJsDefined = typeof window !== 'undefined';
+    if (!isJsDefined) return;
 
     if (isGeoListening) {
       getLocation()
@@ -53,8 +56,17 @@ export const useGeo: TUseGeo = () => {
   }, [isGeoListening]);
 
   const toggleListening = useCallback(() => {
-    setIsGeoListening(!isGeoListening);
-  }, [isGeoListening]);
+    setIsGeoListening((prevstate) => !prevstate);
+    // tutaj sprobowac to usunac i zobaczyc efekt
+  }, []);
 
-  return { location, isGeoListening, toggleListening, isBusy };
+  // const longitude = location.longitude ? location.longitude : '';
+  // const latitude = location.latitude ? location.latitude : '';
+
+  return {
+    location,
+    isGeoListening,
+    toggleListening,
+    isBusy,
+  };
 };

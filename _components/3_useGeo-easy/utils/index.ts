@@ -1,4 +1,4 @@
-import { TCoordinates } from "../types";
+import { TCoordinates } from '../components/UseGeoUsageExample/types';
 
 export const getLocation = (): Promise<TCoordinates> => {
   const location: Promise<TCoordinates> = new Promise((resolve, reject) => {
@@ -9,7 +9,7 @@ export const getLocation = (): Promise<TCoordinates> => {
         const location = {
           latitude,
           longitude,
-          error: "",
+          error: '',
         };
 
         resolve(location);
@@ -18,7 +18,7 @@ export const getLocation = (): Promise<TCoordinates> => {
       reject({
         latitude: undefined,
         longitude: undefined,
-        error: "Geolocation failed.",
+        error: 'Geolocation failed.',
       });
     }
   });

@@ -1,7 +1,7 @@
-import { Stars } from "../../Stars";
-import { RatingProps } from "./types";
+import { Stars } from '../../Stars';
 
-import style from "./rwd.module.scss";
+import style from './rwd.module.scss';
+import { TRating } from '../../../../types';
 const {
   wrapper,
   wrapperHeader,
@@ -10,9 +10,7 @@ const {
   wrapperHeaderStars,
 } = style;
 
-export const Rating = ({
-  rating: { score, content, name, recordId },
-}: RatingProps) => {
+export const Rating = ({ score, content, name, recordId }: TRating) => {
   return (
     <li className={wrapper}>
       <div className={wrapperHeader}>
