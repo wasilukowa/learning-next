@@ -1,10 +1,12 @@
-import { NavigationItem } from './NavigationItem';
+'use client';
 
-import style from './rwd.module.scss';
-const { wrapper, tableOfContent } = style;
+import { NavigationItem } from './NavigationItem';
 
 import data from '../../data/homePageData.json';
 import { createRoutesObject } from '../../utils';
+
+import style from './rwd.module.scss';
+const { wrapper, tableOfContent } = style;
 
 const routes = createRoutesObject(data);
 

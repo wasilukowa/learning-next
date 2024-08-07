@@ -14,6 +14,8 @@
 
     padding: 5px 10px;
 
+    border: 3px solid $color-secondary;
+
     background-color: $color-secondary;
 
     font-size: 16px;
@@ -22,8 +24,23 @@
     color: $color-dark-secondary;
 
     &:hover {
+      border-color: darken($color-main, 15%);
       background-color: $color-main;
       transition-duration: 0.3s;
+    }
+    &:focus {
+      border-color: darken($color-secondary, 15%);
+      background-color: darken($color-secondary, 10%);
+    }
+
+    &Active {
+      border-color: darken($color-main, 15%);
+      background-color: $color-main;
+
+      &:focus {
+        border-color: darken($color-main, 15%);
+        background-color: darken($color-main, 10%);
+      }
     }
   }
 }
