@@ -4,25 +4,15 @@ import style from './rwd.module.scss';
 
 const { wrapper, wrapperButton } = style;
 
-import { useMemoState } from './useUseMemoStateUsage';
+import { useMemoState } from './useMemoState';
 import { UseMemoStateUsageProps } from './types';
 
-export const UseMemoStateUsage = ({
-  number,
-  object,
-  array,
-  string,
-}: UseMemoStateUsageProps) => {
-  const {
-    infoReference,
-    showRenderingInfo,
-    handleNumberVal,
-    handleChangeToObject,
-    handleArrVal,
-    handleStringVal,
-  } = useMemoState(number, object, array, string);
+export const UseMemoStateUsageExample = () => {
+  const initialValue = 1;
+  const { infoReference, showRenderingInfo, value, handleValueChange } =
+    useMemoState(initialValue);
 
-  const [example, setExample] = useMemoState({ qwe: 'asd', numericValue: 3 });
+  // const [example, setExample] = useMemoState({ qwe: 'asd', numericValue: 3 });
 
   showRenderingInfo();
 
@@ -31,27 +21,9 @@ export const UseMemoStateUsage = ({
       <div className={wrapper}>
         <button
           className={`${wrapperButton} button-default`}
-          onClick={handleNumberVal}
+          onClick={() => handleValueChange(4)}
         >
-          {number.buttonLabel}
-        </button>
-        <button
-          className={`${wrapperButton} button-default`}
-          onClick={handleChangeToObject}
-        >
-          {object.buttonLabel}
-        </button>
-        <button
-          className={`${wrapperButton} button-default`}
-          onClick={handleArrVal}
-        >
-          {array.buttonLabel}
-        </button>
-        <button
-          className={`${wrapperButton} button-default`}
-          onClick={handleStringVal}
-        >
-          {string.buttonLabel}
+          {'DUpa'}
         </button>
       </div>
       <div ref={infoReference}>Is it renders?</div>

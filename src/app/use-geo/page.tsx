@@ -2,16 +2,8 @@ import { UseGeoUsageExample } from '../../../_components/3_useGeo-easy/component
 
 import data from '../../../data/homePageData.json';
 
-export default function UseGeoPage({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
-  const ratingsJson = data['use-geo'].data.labels;
+export default function UseGeoPage() {
+  const geoLabels = data['use-geo'].data.labels;
 
-  return (
-    <>
-      <UseGeoUsageExample labels={ratingsJson} />
-    </>
-  );
+  return <UseGeoUsageExample labels={geoLabels} />;
 }
