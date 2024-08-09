@@ -1,1 +1,1 @@
-export { UseMemoStateUsage } from "./UseMemoStateUsage";
+export { UseMemoStateUsageExample } from './UseMemoStateUsageExample';

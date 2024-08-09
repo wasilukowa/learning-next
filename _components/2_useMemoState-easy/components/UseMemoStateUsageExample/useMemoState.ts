@@ -4,13 +4,17 @@ import { useState, useMemo, useRef } from 'react';
 import { TUseMemo } from './types';
 import { isEqual } from 'lodash';
 
-export const useMemoState = <T>(initialValue: T): ReturnType<TUseMemo<T>> => {
-  const [value, setValue] = useState(initialValue);
+export const useMemoState = <T>(): ReturnType<TUseMemo<T>> => {
+  const [value, setValue] = useState<T | null>(null);
+
+  const [typeOfT, setTypeOfT] = useState<
+    'string' | 'number' | 'object' | 'array'
+  >('string');
 
   const handleValueChange = useMemo(() => {
     return (newValue: T) => {
       const areEqualLodash = isEqual(newValue, value);
-      if (!areEqualLodash) setValue((prevState) => newValue);
+      if (!areEqualLodash) setValue(newValue);
     };
   }, [value]);
 
@@ -29,7 +33,8 @@ export const useMemoState = <T>(initialValue: T): ReturnType<TUseMemo<T>> => {
   return {
     infoReference,
     showRenderingInfo,
-    value,
     handleValueChange,
+    setTypeOfT,
+    typeOfT,
   };
 };

@@ -31,9 +31,10 @@ export type UseMemoStateUsageProps = {
   string: TString;
 };
 
-export type TUseMemo<T> = (value: T) => {
+export type TUseMemo<T> = () => {
   infoReference: MutableRefObject<HTMLEmbedElement | null>;
   showRenderingInfo: () => void;
+  handleChange: (v: string) => void;
   value: T;
   handleValueChange: (newValue: T) => void;
 };
