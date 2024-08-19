@@ -1,9 +1,11 @@
-import styles from './rwd.module.css';
+import styles from './rwd.module.scss';
+
+const { wrapperHome, wrapperHomeTitle } = styles;
 
 export default function Home() {
   return (
-    <div>
-      <p>NO ELO</p>
+    <div className={wrapperHome}>
+      <h1 className={wrapperHomeTitle}>Welcome Witaj Hello</h1>
     </div>
   );
 }

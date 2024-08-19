@@ -9,7 +9,7 @@ export type RatingStarsProps = {
   ratings: TRating[];
 };
 
-export const RatingStars = async ({ ratings }: RatingStarsProps) => {
+export const RatingStars = async () => {
   const data = await fetch('http://localhost:3001/api/data/ratingStars').then(
     (res) => res.json(),
   );

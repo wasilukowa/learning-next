@@ -4,7 +4,72 @@ import express from 'express';
 const app = express();
 const PORT = 3001;
 
-const data = {
+const navigationData = [
+  {
+    name: 'Home Page',
+    id: 'home',
+    url: '/',
+  },
+  {
+    name: 'Rating Stars',
+    id: 'rating-stars',
+    url: '/rating-stars',
+  },
+
+  {
+    name: 'UseMemo Hook usage',
+    id: 'use-memo',
+    url: '/use-memo',
+  },
+  {
+    name: 'UseGeo Hook usage',
+    id: 'use-geo',
+    url: '/use-geo',
+  },
+  {
+    name: 'Modal',
+    id: 'modal',
+    url: '/modal',
+  },
+
+  {
+    name: 'Search with dropdown',
+    id: 'search',
+    url: '/search',
+  },
+  {
+    name: 'Table with pagination',
+    id: 'pagination-table',
+    url: '/paginated-table',
+  },
+  {
+    name: 'Masonry grid',
+    id: 'masonry-grid',
+    url: '/masonry-grid',
+  },
+  {
+    name: 'useIntersectionObserver',
+    id: 'intersection-observer',
+    url: '/intersection-observer',
+  },
+  {
+    name: 'Infinite Human List',
+    id: 'infinite-human-list',
+    url: '/infinite-human-list',
+  },
+  {
+    name: 'Password Input',
+    id: 'password-input',
+    url: '/password-input',
+  },
+  {
+    name: 'Multistep Form',
+    id: 'multistep-form',
+    url: '/multistep-form',
+  },
+];
+
+const ratingStarsData = {
   name: 'Rating Stars',
   id: 'rating-stars',
   url: '/rating-stars',
@@ -114,7 +179,11 @@ const data = {
 
 // Endpoint, który zwraca dane w formacie JSON
 app.get('/api/data/ratingStars', (req, res) => {
-  res.json(data);
+  res.json(ratingStarsData);
+});
+
+app.get('/api/data/navigationMenu', (req, res) => {
+  res.json(navigationData);
 });
 
 // Uruchomienie serwera na porcie 3001
