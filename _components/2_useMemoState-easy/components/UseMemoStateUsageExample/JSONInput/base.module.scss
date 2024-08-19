@@ -1,0 +1,27 @@
+@import '../../../../../src/app/ui/variables';
+
+.wrapper {
+  display: flex;
+  flex-basis: 1fr 1fr;
+  //   flex-direction: row;
+  &Explanation {
+    width: 100%;
+  }
+
+  &Textarea {
+    display: flex;
+    flex-direction: column;
+    // justify-content: space-between;
+    width: 100%;
+
+    .textarea {
+      display: block;
+      width: 100%;
+      min-height: 600px;
+    }
+
+    &Button {
+      margin-top: 20px;
+    }
+  }
+}

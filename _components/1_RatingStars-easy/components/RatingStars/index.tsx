@@ -9,11 +9,17 @@ export type RatingStarsProps = {
   ratings: TRating[];
 };
 
-export const RatingStars = ({ ratings }: RatingStarsProps) => {
+export const RatingStars = async ({ ratings }: RatingStarsProps) => {
+  const data = await fetch('http://localhost:3001/api/data/ratingStars').then(
+    (res) => res.json(),
+  );
+
+  console.log(data.data.ratings);
+
   return (
     <section className={wrapper}>
-      <AverageScore ratings={ratings} />
-      <RatingsList ratings={ratings} />
+      <AverageScore ratings={data.data.ratings} />
+      <RatingsList ratings={data.data.ratings} />
     </section>
   );
 };

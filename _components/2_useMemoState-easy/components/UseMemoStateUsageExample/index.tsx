@@ -9,7 +9,7 @@ import { UseMemoStateUsageProps } from './types';
 import { useRef, useState } from 'react';
 import { Input } from './Input';
 import { RadioButton } from './RadioButton';
-import { ObjectInput } from './ObjectInput';
+import { JSONInput, ObjectInput } from './JSONInput';
 
 export const UseMemoStateUsageExample = () => {
   const {
@@ -36,7 +36,7 @@ export const UseMemoStateUsageExample = () => {
             <Input typeOfInput={'number'} reference={inputReference} />
           )}
 
-          {typeOfT === 'object' && <ObjectInput reference={inputReference} />}
+          {typeOfT === 'object' && <JSONInput reference={inputReference} />}
 
           <button
             className={`${wrapperButton} button-default`}
