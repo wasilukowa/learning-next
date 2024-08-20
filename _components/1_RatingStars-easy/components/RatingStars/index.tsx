@@ -3,6 +3,7 @@ import { RatingsList } from './RatingsList';
 import { TRating } from '../../types';
 
 import style from './rwd.module.scss';
+import { getRatingStarsFromAPI } from '@/app/lib/data';
 const { wrapper } = style;
 
 export type RatingStarsProps = {
@@ -10,11 +11,8 @@ export type RatingStarsProps = {
 };
 
 export const RatingStars = async () => {
-  const data = await fetch('http://localhost:3001/api/data/ratingStars').then(
-    (res) => res.json(),
-  );
-
-  console.log(data.data.ratings);
+  const data = await getRatingStarsFromAPI();
+  console.log('rating stars data: ', data.data);
 
   return (
     <section className={wrapper}>

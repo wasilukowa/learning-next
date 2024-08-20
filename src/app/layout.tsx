@@ -3,6 +3,8 @@ import { Navigation } from '../../_components/Navigation';
 import { roboto, roboto_condensed } from './ui/fonts';
 import './globals.scss';
 import styles from './rwd.module.scss';
+import { Suspense } from 'react';
+import { NavigationSkeleton } from '../../_components/Navigation/Skeleton';
 
 const { wrapper } = styles;
 
@@ -22,7 +24,9 @@ export default function RootLayout({
   return (
     <html lang="en" className={computedFonts}>
       <body>
-        <Navigation />
+        <Suspense fallback={<NavigationSkeleton />}>
+          <Navigation />
+        </Suspense>
         <main className={wrapper}>{children}</main>
       </body>
     </html>

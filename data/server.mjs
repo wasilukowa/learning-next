@@ -1,4 +1,3 @@
-// server.ts
 import express from 'express';
 
 const app = express();
@@ -177,7 +176,6 @@ const ratingStarsData = {
   },
 };
 
-// Endpoint, który zwraca dane w formacie JSON
 app.get('/api/data/ratingStars', (req, res) => {
   res.json(ratingStarsData);
 });
@@ -186,7 +184,6 @@ app.get('/api/data/navigationMenu', (req, res) => {
   res.json(navigationData);
 });
 
-// Uruchomienie serwera na porcie 3001
 app.listen(PORT, () => {
   console.log(`Serwer działa na porcie ${PORT}`);
 });

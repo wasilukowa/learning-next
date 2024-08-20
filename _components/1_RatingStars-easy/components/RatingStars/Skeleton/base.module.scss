@@ -1,0 +1,11 @@
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 400px;
+
+  p {
+    display: inline-block;
+    font-size: 40px;
+  }
+}
