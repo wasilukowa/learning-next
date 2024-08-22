@@ -8,19 +8,20 @@ import { useMemoState } from './useMemoState';
 import { UseMemoStateUsageProps } from './types';
 import { useRef, useState } from 'react';
 import { Input } from './Input';
-import { RadioButton } from './RadioButton';
-import { JSONInput, ObjectInput } from './JSONInput';
+import { InputSelection } from './InputSelection';
+import { JSONInput } from './Input/JSONInput';
 
 export const UseMemoStateUsageExample = () => {
   const {
     infoReference,
+    inputReference,
     showRenderingInfo,
     handleValueChange,
-    typeOfT,
-    setTypeOfT,
-  } = useMemoState();
+    errorMessage,
 
-  const inputReference = useRef<HTMLInputElement | null>(null);
+    typeOfInput,
+    handleTypeChange,
+  } = useMemoState();
 
   showRenderingInfo();
 
@@ -28,16 +29,13 @@ export const UseMemoStateUsageExample = () => {
     <>
       <div>
         <div>
-          <RadioButton typeOfT={typeOfT} setTypeOfT={setTypeOfT} />
-          {typeOfT === 'string' && (
-            <Input typeOfInput={'text'} reference={inputReference} />
-          )}
-          {typeOfT === 'number' && (
-            <Input typeOfInput={'number'} reference={inputReference} />
-          )}
-
-          {typeOfT === 'object' && <JSONInput reference={inputReference} />}
-
+          <InputSelection
+            typeOfInput={typeOfInput}
+            handleTypeChange={handleTypeChange}
+          />
+          <Input typeOfInput={typeOfInput} reference={inputReference} />
+          {errorMessage !== '' && 'BUM'}
+          <div>{inputReference.current?.value}</div>
           <button
             className={`${wrapperButton} button-default`}
             onClick={() => handleValueChange(inputReference.current?.value)}
@@ -53,7 +51,8 @@ export const UseMemoStateUsageExample = () => {
       <br />
       <br />
       <div ref={infoReference}>
-        This is your initial value: {inputReference.current?.value}
+        <div>This is your initial value: {inputReference.current?.value}</div>
+        <span></span>
       </div>
     </>
   );

@@ -1,4 +1,4 @@
-@import '../../../../../src/app/ui/variables';
+@import '../../../../../../src/app/ui/variables';
 
 .wrapper {
   display: flex;
@@ -13,6 +13,9 @@
     flex-direction: column;
     // justify-content: space-between;
     width: 100%;
+    textarea {
+      height: 100%;
+    }
 
     .textarea {
       display: block;

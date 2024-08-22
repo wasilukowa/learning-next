@@ -1,4 +1,6 @@
-import { MutableRefObject, Reference } from 'react';
+import { MutableRefObject } from 'react';
+
+export type TtypeOfT = 'string' | 'number' | 'object' | 'array' | 'unknown';
 
 export type TNumber = {
   buttonLabel: string;
@@ -33,8 +35,10 @@ export type UseMemoStateUsageProps = {
 
 export type TUseMemo<T> = () => {
   infoReference: MutableRefObject<HTMLEmbedElement | null>;
+  inputReference: MutableRefObject<HTMLTextAreaElement | null>;
   showRenderingInfo: () => void;
-  handleChange: (v: string) => void;
-  value: T;
-  handleValueChange: (newValue: T) => void;
+  handleTypeChange: (newType: TtypeOfT) => void;
+  typeOfInput: T;
+  handleValueChange: () => void;
+  errorMessage: string;
 };

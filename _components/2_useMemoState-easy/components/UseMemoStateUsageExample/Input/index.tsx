@@ -1,9 +1,8 @@
+import { JSONInput } from './JSONInput';
+
 export const Input = ({ reference, typeOfInput }) => {
-  console.log(typeOfInput);
-  return (
-    <div>
-      <label htmlFor="input-initial-string">STRING, value: </label>
-      <input ref={reference} type={typeOfInput} id="input-string" />
-    </div>
-  );
+  const isTypeNumber = typeOfInput === 'number';
+  if (isTypeNumber) return <input type="number" ref={reference} />;
+
+  return <JSONInput reference={reference} typeOfInput={typeOfInput} />;
 };
