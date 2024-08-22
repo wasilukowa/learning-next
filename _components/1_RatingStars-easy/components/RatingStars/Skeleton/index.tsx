@@ -1,11 +1,16 @@
 import styles from './base.module.scss';
 
-const { wrapper } = styles;
+const { wrapper, wrapperAverageScorePlaceholder, wrapperRatingPlaceholder } =
+  styles;
 
 export const RatingStarsSkeleton = () => {
   return (
     <div className={wrapper}>
-      <p>SKELETOOOOOOOOON!!!!!</p>
+      <div className={wrapperAverageScorePlaceholder}></div>
+      <div className={wrapperRatingPlaceholder}></div>
+      <div className={wrapperRatingPlaceholder}></div>
+      <div className={wrapperRatingPlaceholder}></div>
+      <div className={wrapperRatingPlaceholder}></div>
     </div>
   );
 };

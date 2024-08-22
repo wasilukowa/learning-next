@@ -1,11 +1,21 @@
-.wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 400px;
+@import '../../../../../src/app/ui/variables';
 
-  p {
-    display: inline-block;
-    font-size: 40px;
+.wrapper {
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
+  // height: 400px;
+
+  &AverageScorePlaceholder {
+    min-height: 40px;
+    margin-bottom: 20px;
+  }
+
+  &RatingPlaceholder {
+    height: 100px;
+    width: 100%;
+
+    margin-bottom: 5px;
+    background-color: #ececec;
   }
 }

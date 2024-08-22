@@ -1,8 +1,8 @@
-@import './ui/variables';
+@import './variables';
 
 .wrapper {
   max-width: 1000px;
-  margin: 0 auto;
+  margin: 10px auto;
 
   &Home {
     display: flex;
