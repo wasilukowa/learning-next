@@ -1,4 +1,4 @@
-export const getDataFromAPI = async (path: string, signal) => {
+export const getDataFromAPI = async (path: string, signal: AbortSignal) => {
   try {
     const data = await fetch(path, {
       cache: 'force-cache',
