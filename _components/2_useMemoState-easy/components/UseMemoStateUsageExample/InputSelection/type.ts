@@ -1,6 +1,6 @@
-import { TtypeOfT } from '../types';
+import { TtypeOfInput } from '../types';
 
 export type InputSelectionProps = {
-  typeOfInput: TtypeOfT;
-  handleTypeChange: (newType: TtypeOfT) => void;
+  typeOfInput: TtypeOfInput;
+  handleTypeChange: (newType: TtypeOfInput) => void;
 };

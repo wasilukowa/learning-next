@@ -28,7 +28,9 @@ const json = {
 import styles from './base.module.scss';
 const { wrapper, wrapperCode } = styles;
 
-export const Explanation = () => {
+export const Explanation = ({ typeOfInput }) => {
+  const isObject = typeOfInput === 'object';
+  if (!isObject) return;
   return (
     <section className={wrapper}>
       <h2>Note: Given object needs to be in JSON format.</h2>

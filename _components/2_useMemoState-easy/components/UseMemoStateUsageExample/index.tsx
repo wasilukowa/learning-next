@@ -5,11 +5,9 @@ import style from './rwd.module.scss';
 const { wrapper, wrapperButton } = style;
 
 import { useMemoState } from './useMemoState';
-import { UseMemoStateUsageProps } from './types';
-import { useRef, useState } from 'react';
 import { Input } from './Input';
 import { InputSelection } from './InputSelection';
-import { JSONInput } from './Input/JSONInput';
+import { Explanation } from './Input/Explanation';
 
 export const UseMemoStateUsageExample = () => {
   const {
@@ -18,42 +16,35 @@ export const UseMemoStateUsageExample = () => {
     showRenderingInfo,
     handleValueChange,
     errorMessage,
-
     typeOfInput,
+    handleMemorizeItButton,
     handleTypeChange,
   } = useMemoState();
 
-  showRenderingInfo();
+  // showRenderingInfo();
+
+  // const potentialReference =
 
   return (
-    <>
-      <div>
-        <div>
-          <InputSelection
-            typeOfInput={typeOfInput}
-            handleTypeChange={handleTypeChange}
-          />
-          <Input typeOfInput={typeOfInput} reference={inputReference} />
-          {errorMessage !== '' && 'BUM'}
-          <div>{inputReference.current?.value}</div>
-          <button
-            className={`${wrapperButton} button-default`}
-            onClick={() => handleValueChange(inputReference.current?.value)}
-          >
-            Memorize it!
-          </button>
-        </div>
-      </div>
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
+    <div className={wrapper}>
+      <InputSelection
+        typeOfInput={typeOfInput}
+        handleTypeChange={handleTypeChange}
+      />
+      <Input typeOfInput={typeOfInput} reference={inputReference} />
+      {errorMessage}
+      <button
+        className={`${wrapperButton} button-default`}
+        onClick={handleMemorizeItButton}
+      >
+        Memorize it!
+      </button>
       <div ref={infoReference}>
-        <div>This is your initial value: {inputReference.current?.value}</div>
+        <div>Your value: {inputReference.current?.value}</div>
         <span></span>
       </div>
-    </>
+
+      <Explanation typeOfInput={typeOfInput} />
+    </div>
   );
 };

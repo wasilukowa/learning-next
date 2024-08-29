@@ -4,7 +4,10 @@ import styles from './rwd.module.scss';
 
 const { wrapper, wrapperLegend, wrapperInputs, wrapperInputsLabel } = styles;
 
-export const InputSelection = ({ typeOfInput, handleTypeChange }: InputSelectionProps) => {
+export const InputSelection = ({
+  typeOfInput,
+  handleTypeChange,
+}: InputSelectionProps) => {
   return (
     <fieldset className={wrapper}>
       <legend className={wrapperLegend}>Your input type: </legend>

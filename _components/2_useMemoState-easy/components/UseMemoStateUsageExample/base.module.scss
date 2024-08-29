@@ -1,12 +1,20 @@
 .wrapper {
+  box-sizing: border-box;
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
+  flex-direction: column;
 
-  width: 100%;
-  padding-top: 40px;
+  width: 80%;
+  margin: 10px;
+
+  &Inputs {
+    display: flex;
+    flex-wrap: wrap;
+  }
 
   &Button {
+    display: block;
     margin: 0 10px 10px 0;
+    width: 200px;
   }
 }
