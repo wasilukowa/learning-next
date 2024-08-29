@@ -1,4 +1,5 @@
 import { MutableRefObject } from 'react';
+import { InputProps } from './Input/types';
 
 export type TtypeOfInput = 'string' | 'number' | 'object' | 'array' | 'unknown';
 
@@ -33,12 +34,14 @@ export type UseMemoStateUsageProps = {
   string: TString;
 };
 
-export type TUseMemo<T> = () => {
+export type UseMemoReturn<T> = {
   infoReference: MutableRefObject<HTMLEmbedElement | null>;
-  inputReference: MutableRefObject<HTMLTextAreaElement | null>;
+  inputReference: Pick<InputProps, 'reference'>;
   showRenderingInfo: () => void;
   handleTypeChange: (newType: T) => void;
   typeOfInput: T;
-  handleValueChange: () => void;
+  handleMemorizeItButton: () => void;
   errorMessage: string;
 };
+
+export type TUseMemo<T> = () => UseMemoReturn<T>;

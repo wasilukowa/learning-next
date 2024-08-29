@@ -21,4 +21,13 @@
       margin-top: 20px;
     }
   }
+  &Number {
+    min-height: 100px;
+    text-align: start;
+    // height: 200px !important;
+  }
+
+  &Error {
+    height: 60px;
+  }
 }

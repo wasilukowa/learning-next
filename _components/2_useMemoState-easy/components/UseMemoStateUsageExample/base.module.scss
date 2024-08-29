@@ -17,4 +17,13 @@
     margin: 0 10px 10px 0;
     width: 200px;
   }
+
+  &Error {
+    margin-top: 6px;
+    height: 30px;
+    margin-bottom: 6px;
+    color: red;
+    font-weight: 600;
+    font-size: 14px;
+  }
 }

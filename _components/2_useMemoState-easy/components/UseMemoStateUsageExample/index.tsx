@@ -2,7 +2,7 @@
 
 import style from './rwd.module.scss';
 
-const { wrapper, wrapperButton } = style;
+const { wrapper, wrapperError, wrapperButton } = style;
 
 import { useMemoState } from './useMemoState';
 import { Input } from './Input';
@@ -13,8 +13,6 @@ export const UseMemoStateUsageExample = () => {
   const {
     infoReference,
     inputReference,
-    showRenderingInfo,
-    handleValueChange,
     errorMessage,
     typeOfInput,
     handleMemorizeItButton,
@@ -25,6 +23,7 @@ export const UseMemoStateUsageExample = () => {
 
   // const potentialReference =
 
+  const isErrorVisible = errorMessage !== ''; // zmienić na NULL
   return (
     <div className={wrapper}>
       <InputSelection
@@ -32,7 +31,8 @@ export const UseMemoStateUsageExample = () => {
         handleTypeChange={handleTypeChange}
       />
       <Input typeOfInput={typeOfInput} reference={inputReference} />
-      {errorMessage}
+      <div className={wrapperError}>{isErrorVisible && errorMessage}</div>
+
       <button
         className={`${wrapperButton} button-default`}
         onClick={handleMemorizeItButton}
@@ -43,7 +43,6 @@ export const UseMemoStateUsageExample = () => {
         <div>Your value: {inputReference.current?.value}</div>
         <span></span>
       </div>
-
       <Explanation typeOfInput={typeOfInput} />
     </div>
   );

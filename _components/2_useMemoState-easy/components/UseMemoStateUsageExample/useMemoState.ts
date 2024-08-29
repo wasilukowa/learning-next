@@ -44,34 +44,29 @@ export const useMemoState = <T extends TtypeOfInput>(): ReturnType<
 
     const value = potentialReference.value;
 
-    console.log('ROBIE');
-
     const isValueObject = typeOfInput === 'object';
+    const isValueArray = typeOfInput === 'array';
 
-    if (isValueObject) {
+    if (isValueObject || isValueArray) {
       const isValueValidJSON = isJSON(value);
       if (!isValueValidJSON) {
-        setErrorMessage('TO NIE JSON!');
+        setErrorMessage(
+          `Incorrect JSON ${typeOfInput} format, please check and try again. Below you can find simple JSON ${typeOfInput} format explanation.`,
+        );
         return () => {};
-      } else {
-        setErrorMessage('');
       }
+      setErrorMessage('');
     }
+
     handleValueChange(value as T);
   };
 
   const handleValueChange = useMemo(() => {
-    // const potentialReference = inputReference.current;
-    // if (!potentialReference) return () => {};
-
-    // const value = potentialReference.value;
-
     return (value: T) => {
       const areEqualLodash = isEqual(memorizedValue, value);
       console.log(areEqualLodash, value);
       if (!areEqualLodash) {
         setValue(value);
-        console.log('value change');
       }
     };
   }, [memorizedValue]);
@@ -91,7 +86,6 @@ export const useMemoState = <T extends TtypeOfInput>(): ReturnType<
     inputReference,
     errorMessage,
     showRenderingInfo,
-    handleValueChange,
     typeOfInput,
     handleMemorizeItButton,
     handleTypeChange,

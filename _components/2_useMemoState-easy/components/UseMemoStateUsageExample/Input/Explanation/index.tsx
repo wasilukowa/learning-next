@@ -25,10 +25,13 @@ const json = {
   ],
 };
 
+import { TtypeOfInput } from '../../types';
 import styles from './base.module.scss';
 const { wrapper, wrapperCode } = styles;
 
-export const Explanation = ({ typeOfInput }) => {
+type ExplanationProps = { typeOfInput: TtypeOfInput };
+
+export const Explanation = ({ typeOfInput }: ExplanationProps) => {
   const isObject = typeOfInput === 'object';
   if (!isObject) return;
   return (
