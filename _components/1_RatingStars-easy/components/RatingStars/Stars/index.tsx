@@ -1,12 +1,13 @@
 import { isValidNumberOfStars } from '../../../utils';
-import { FullStar } from './FullStar';
-import { BlankStar } from './BlankStar';
-import { StarPercentage } from './StarPercentage';
+import { FullStar } from './Star/FullStar';
+import { BlankStar } from './Star/BlankStar';
+import { StarPercentage } from './Star/StarPercentage';
 
 import { StarsProps } from './types';
 
 import clsx from 'clsx';
 import style from './rwd.module.scss';
+import { Star } from './Star';
 const { wrapperForAverage } = style;
 
 // clsx
@@ -22,21 +23,16 @@ export const Stars = ({ score, id, isAverageStars }: StarsProps) => {
   // blankedStars: 1
 
   return (
-    // <div className={listOfClasses}>
     <div className={clsx(isAverageStars && wrapperForAverage)}>
       {[...new Array(5)].map((element, index) => {
-        const keyNumber = id + '_' + (index + 1);
-        const isFullStar = index < Math.floor(score);
-
-        if (isFullStar) return <FullStar key={keyNumber} />;
-        const isHalfStar =
-          !Number.isInteger(score) && index === Math.floor(score);
-
-        if (isHalfStar) {
-          return <StarPercentage score={score} key={keyNumber} />;
-        }
-
-        return <BlankStar key={keyNumber} />;
+        return (
+          <Star
+            key={id + '_' + (index + 1)}
+            index={index}
+            score={score}
+            id={id}
+          />
+        );
       })}
     </div>
   );

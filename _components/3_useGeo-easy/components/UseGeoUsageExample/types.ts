@@ -8,17 +8,13 @@ export type UseGeoUsageExampleProps = {
     errorMessage: string;
   };
 };
-
-export type TCoordinates = {
-  error: string | null;
-  latitude: number | null;
-  longitude: number | null;
-};
+export type TCoordinate = number | null;
 
 export type TUseGeo = () => UseGeoReturn;
 
 export type UseGeoReturn = {
-  location: TCoordinates;
+  latitude: TCoordinate;
+  longitude: TCoordinate;
   isBusy: boolean;
   isGeoListening: boolean;
   toggleListening: () => void;

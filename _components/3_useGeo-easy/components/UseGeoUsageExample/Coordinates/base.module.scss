@@ -3,14 +3,4 @@
 .wrapper {
   font-family: $font-roboto;
   font-size: 22px;
-
-  &Label {
-    font-weight: 400;
-    padding-top: 20px;
-    padding-bottom: 10px;
-  }
-
-  &Coordinate {
-    font-weight: 700;
-  }
 }

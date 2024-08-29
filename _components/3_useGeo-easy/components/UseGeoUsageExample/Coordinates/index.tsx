@@ -1,7 +1,9 @@
 import { CoordinatesProps } from './types';
 
+import { Coordinate } from './Coordinate';
+
 import style from './rwd.module.scss';
-const { wrapper, wrapperLabel, wrapperCoordinate } = style;
+const { wrapper } = style;
 
 export const Coordinates = ({
   latitudeLabel,
@@ -11,10 +13,8 @@ export const Coordinates = ({
 }: CoordinatesProps) => {
   return (
     <div className={wrapper}>
-      <p className={wrapperLabel}>{latitudeLabel}</p>
-      <span className={wrapperCoordinate}>{latitude}</span>
-      <p className={wrapperLabel}>{longitudeLabel}</p>
-      <span className={wrapperCoordinate}>{longitude}</span>
+      <Coordinate coordinate={latitude} label={latitudeLabel} />
+      <Coordinate coordinate={longitude} label={longitudeLabel} />
     </div>
   );
 };

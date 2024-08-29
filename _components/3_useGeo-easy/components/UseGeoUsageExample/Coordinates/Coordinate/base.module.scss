@@ -1,0 +1,11 @@
+.wrapper {
+  &Label {
+    font-weight: 400;
+    padding-top: 20px;
+    padding-bottom: 10px;
+  }
+
+  &Coordinate {
+    font-weight: 700;
+  }
+}
