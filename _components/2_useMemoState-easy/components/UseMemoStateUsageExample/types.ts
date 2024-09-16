@@ -34,9 +34,11 @@ export type UseMemoStateUsageProps = {
   string: TString;
 };
 
-export type UseMemoReturn<T> = {
+export type UseMemoReturn<T> = Pick<
+  InputProps,
+  'inputReference' | 'textAreaReference'
+> & {
   infoReference: MutableRefObject<HTMLEmbedElement | null>;
-  inputReference: Pick<InputProps, 'reference'>;
   showRenderingInfo: () => void;
   handleTypeChange: (newType: T) => void;
   typeOfInput: T;

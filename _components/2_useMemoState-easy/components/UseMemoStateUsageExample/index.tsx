@@ -2,48 +2,55 @@
 
 import style from './rwd.module.scss';
 
-const { wrapper, wrapperError, wrapperButton } = style;
+const {
+  wrapper,
+  wrapperInput,
+  wrapperInputBlockHolder,
+  wrapperError,
+  wrapperButton,
+} = style;
 
 import { useMemoState } from './useMemoState';
 import { Input } from './Input';
 import { InputSelection } from './InputSelection';
-import { Explanation } from './Input/Explanation';
+import { Explanation } from './Explanation';
 
 export const UseMemoStateUsageExample = () => {
   const {
     infoReference,
     inputReference,
+    textAreaReference,
     errorMessage,
     typeOfInput,
     handleMemorizeItButton,
     handleTypeChange,
   } = useMemoState();
 
-  // showRenderingInfo();
+  const isErrorVisible = errorMessage !== null;
 
-  // const potentialReference =
-
-  const isErrorVisible = errorMessage !== ''; // zmienić na NULL
   return (
     <div className={wrapper}>
       <InputSelection
         typeOfInput={typeOfInput}
         handleTypeChange={handleTypeChange}
       />
-      <Input typeOfInput={typeOfInput} reference={inputReference} />
-      <div className={wrapperError}>{isErrorVisible && errorMessage}</div>
-
-      <button
-        className={`${wrapperButton} button-default`}
-        onClick={handleMemorizeItButton}
-      >
-        Memorize it!
-      </button>
-      <div ref={infoReference}>
-        <div>Your value: {inputReference.current?.value}</div>
-        <span></span>
+      <div className={wrapperInputBlockHolder}>
+        <div className={wrapperInput}>
+          <Input
+            typeOfInput={typeOfInput}
+            inputReference={inputReference}
+            textAreaReference={textAreaReference}
+          />
+          <div className={wrapperError}>{isErrorVisible && errorMessage}</div>
+          <button
+            className={`${wrapperButton} button-default`}
+            onClick={handleMemorizeItButton}
+          >
+            Memorize it!
+          </button>
+        </div>
+        <Explanation typeOfInput={typeOfInput} />
       </div>
-      <Explanation typeOfInput={typeOfInput} />
     </div>
   );
 };

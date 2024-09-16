@@ -1,0 +1,14 @@
+@import "./base.module.scss";
+@import "../../../styles/modal-breakpoints";
+
+@media (min-width: $modal-breakpoint-1) {
+  .wrapper {
+    &Header {
+      font-size: 26px;
+    }
+
+    &Button {
+      transform: scale(1.3);
+    }
+  }
+}

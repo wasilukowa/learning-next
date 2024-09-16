@@ -2,7 +2,7 @@
 
 import { useState, useMemo, useRef } from 'react';
 import { TUseMemo } from './types';
-import { isEqual, set } from 'lodash';
+import { isEqual } from 'lodash';
 
 import { TtypeOfInput } from './types';
 
@@ -13,19 +13,23 @@ export const useMemoState = <T extends TtypeOfInput>(): ReturnType<
 
   const [typeOfInput, setTypeOfInput] = useState<T>('string' as T);
 
-  const [errorMessage, setErrorMessage] = useState('');
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
   const infoReference = useRef<HTMLEmbedElement | null>(null);
-  const inputReference = useRef<HTMLTextAreaElement | null>(null);
+  const inputReference = useRef<HTMLInputElement | null>(null);
+  const textAreaReference = useRef<HTMLTextAreaElement | null>(null);
 
   const handleTypeChange = (newType: T) => {
     setTypeOfInput(newType);
 
-    const potentialReference = inputReference.current;
+    const potentialReference =
+      typeOfInput === 'number'
+        ? inputReference.current
+        : textAreaReference.current;
 
     if (potentialReference) {
       potentialReference.value = '';
-      setErrorMessage('');
+      setErrorMessage(null);
     }
   };
 
@@ -39,7 +43,12 @@ export const useMemoState = <T extends TtypeOfInput>(): ReturnType<
   };
 
   const handleMemorizeItButton = () => {
-    const potentialReference = inputReference.current;
+    const potentialReference =
+      typeOfInput === 'number'
+        ? inputReference.current
+        : textAreaReference.current;
+
+    // const potentialReference = inputReference.current;
     if (!potentialReference) return () => {};
 
     const value = potentialReference.value;
@@ -51,7 +60,7 @@ export const useMemoState = <T extends TtypeOfInput>(): ReturnType<
       const isValueValidJSON = isJSON(value);
       if (!isValueValidJSON) {
         setErrorMessage(
-          `Incorrect JSON ${typeOfInput} format, please check and try again. Below you can find simple JSON ${typeOfInput} format explanation.`,
+          `Incorrect JSON ${typeOfInput} format, please check and try again.`,
         );
         return () => {};
       }
@@ -84,6 +93,7 @@ export const useMemoState = <T extends TtypeOfInput>(): ReturnType<
   return {
     infoReference,
     inputReference,
+    textAreaReference,
     errorMessage,
     showRenderingInfo,
     typeOfInput,

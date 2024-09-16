@@ -1,0 +1,11 @@
+@import "../../styles/modal-breakpoints";
+@import "./base.module.scss";
+
+@media (min-width: $modal-breakpoint-1) {
+  .wrapper {
+    .button {
+      width: 300px;
+      margin: 20px 20px;
+    }
+  }
+}

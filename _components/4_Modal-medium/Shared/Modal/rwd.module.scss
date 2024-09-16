@@ -1,0 +1,25 @@
+@import "./base.module.scss";
+@import "../../styles/modal-breakpoints";
+
+@media (min-width: $modal-breakpoint-1) {
+  .wrapper {
+    &Modal {
+      width: 80vw;
+      height: 80vh;
+
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    }
+  }
+}
+
+@media (min-width: $modal-breakpoint-2) {
+  .wrapper {
+    &Modal {
+      max-width: 700px;
+      max-height: 700px;
+    }
+  }
+}

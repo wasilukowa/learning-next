@@ -1,0 +1,30 @@
+@import '../../../../../src/app/ui/variables';
+
+.wrapper {
+  display: block;
+  padding-left: 10px;
+  max-width: 50%;
+
+  &Bullet {
+    display: flex;
+    align-items: flex-start;
+    list-style-type: circle;
+    line-height: 20px;
+
+    padding-bottom: 5px;
+    padding-top: 5px;
+    &::before {
+      content: '•'; /* Możesz zmienić na inne punktor */
+      margin-right: 10px; /* Odstęp między bullet a tekstem */
+    }
+  }
+
+  &Code {
+    display: block;
+    padding: 20px;
+    margin-top: 10px;
+    font-size: 16px;
+    font-family: 'Courier New';
+    background-color: $color-light-secondary;
+  }
+}

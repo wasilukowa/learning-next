@@ -4,12 +4,16 @@
   justify-content: center;
   flex-direction: column;
 
-  width: 80%;
+  width: 100%;
   margin: 10px;
 
-  &Inputs {
+  &Input {
+    flex-basis: 60%;
+  }
+
+  &InputBlockHolder {
     display: flex;
-    flex-wrap: wrap;
+    flex-basis: fr fr;
   }
 
   &Button {
