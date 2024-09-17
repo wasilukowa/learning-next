@@ -1,12 +1,10 @@
-import { RatingStarsProps } from '..';
+import { RatingsListProps } from './types';
 import { Rating } from './Rating';
 import style from './rwd.module.scss';
 
-const { wrapper } = style; // wrapper
+const { wrapper } = style;
 
-import { RatingsListProps } from './types';
-
-export const RatingsList = ({ ratings }: RatingStarsProps) => {
+export const RatingsList = ({ ratings }: RatingsListProps) => {
   return (
     <ul className={wrapper}>
       {ratings.map((rating) => (

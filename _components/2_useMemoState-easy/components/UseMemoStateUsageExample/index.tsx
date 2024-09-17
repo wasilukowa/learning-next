@@ -17,7 +17,6 @@ import { Explanation } from './Explanation';
 
 export const UseMemoStateUsageExample = () => {
   const {
-    infoReference,
     inputReference,
     textAreaReference,
     errorMessage,

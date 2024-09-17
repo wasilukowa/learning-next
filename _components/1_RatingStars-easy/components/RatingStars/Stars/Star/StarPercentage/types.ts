@@ -1,4 +1,3 @@
-export type StarProps = {
-  color: string;
-  size: number;
-};
+import { StarProps } from '../types';
+
+export type StarPercentageProps = Pick<StarProps, 'score'>;

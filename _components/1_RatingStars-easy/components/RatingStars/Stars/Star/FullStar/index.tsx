@@ -1,8 +1,8 @@
-import style from "./rwd.module.scss";
+import style from './rwd.module.scss';
 
 const { wrapper } = style;
 
-export const FullStar = (): JSX.Element => {
+export const FullStar = () => {
   return (
     <svg
       className={wrapper}

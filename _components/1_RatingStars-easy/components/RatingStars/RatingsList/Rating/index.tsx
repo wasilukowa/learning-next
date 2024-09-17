@@ -1,7 +1,8 @@
 import { Stars } from '../../Stars';
 
-import style from './rwd.module.scss';
 import { TRating } from '../../../../types';
+
+import style from './rwd.module.scss';
 const {
   wrapper,
   wrapperHeader,

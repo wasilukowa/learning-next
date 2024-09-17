@@ -38,12 +38,10 @@ export type UseMemoReturn<T> = Pick<
   InputProps,
   'inputReference' | 'textAreaReference'
 > & {
-  infoReference: MutableRefObject<HTMLEmbedElement | null>;
-  showRenderingInfo: () => void;
   handleTypeChange: (newType: T) => void;
   typeOfInput: T;
   handleMemorizeItButton: () => void;
-  errorMessage: string;
+  errorMessage: string | null;
 };
 
 export type TUseMemo<T> = () => UseMemoReturn<T>;

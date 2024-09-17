@@ -2,6 +2,7 @@
 
 .wrapper {
   box-sizing: border-box;
+
   padding: 12px;
   margin-bottom: 5px;
 
@@ -12,8 +13,8 @@
 
   &Header {
     display: flex;
-    align-items: flex-start;
     flex-direction: column-reverse;
+    align-items: flex-start;
 
     &Name {
       font-family: var(--font-roboto);

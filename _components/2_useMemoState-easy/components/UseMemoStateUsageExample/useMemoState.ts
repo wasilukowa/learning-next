@@ -15,7 +15,6 @@ export const useMemoState = <T extends TtypeOfInput>(): ReturnType<
 
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
-  const infoReference = useRef<HTMLEmbedElement | null>(null);
   const inputReference = useRef<HTMLInputElement | null>(null);
   const textAreaReference = useRef<HTMLTextAreaElement | null>(null);
 
@@ -73,29 +72,17 @@ export const useMemoState = <T extends TtypeOfInput>(): ReturnType<
   const handleValueChange = useMemo(() => {
     return (value: T) => {
       const areEqualLodash = isEqual(memorizedValue, value);
-      console.log(areEqualLodash, value);
       if (!areEqualLodash) {
         setValue(value);
+        console.log('Values are equal...');
       }
     };
   }, [memorizedValue]);
 
-  const showRenderingInfo = () => {
-    const potentialReference = infoReference.current;
-    const isInfoReferenceDefined = potentialReference !== null;
-    if (!isInfoReferenceDefined) return;
-
-    const postNode = document.createElement('span');
-    postNode.innerText = 'Yes!!';
-    potentialReference.appendChild(postNode);
-  };
-
   return {
-    infoReference,
     inputReference,
     textAreaReference,
     errorMessage,
-    showRenderingInfo,
     typeOfInput,
     handleMemorizeItButton,
     handleTypeChange,

@@ -1,13 +1,11 @@
-import { isValidNumberOfStars } from '../../../utils';
-import { FullStar } from './Star/FullStar';
-import { BlankStar } from './Star/BlankStar';
-import { StarPercentage } from './Star/StarPercentage';
+import clsx from 'clsx';
 
+import { isValidNumberOfStars } from '../../../utils';
+
+import { Star } from './Star';
 import { StarsProps } from './types';
 
-import clsx from 'clsx';
 import style from './rwd.module.scss';
-import { Star } from './Star';
 const { wrapperForAverage } = style;
 
 // clsx

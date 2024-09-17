@@ -1,5 +1,5 @@
-export interface StarsProps {
-  score: number;
-  id: string;
+import { StarProps } from './Star/types';
+
+export type StarsProps = Pick<StarProps, 'score' | 'id'> & {
   isAverageStars: boolean;
-}
+};

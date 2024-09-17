@@ -2,7 +2,9 @@ import { BlankStar } from './BlankStar';
 import { FullStar } from './FullStar';
 import { StarPercentage } from './StarPercentage';
 
-export const Star = ({ index, id, score }) => {
+import { StarProps } from './types';
+
+export const Star = ({ index, id, score }: StarProps) => {
   const keyNumber = id + '_' + (index + 1);
   const isFullStar = index < Math.floor(score);
   if (isFullStar) return <FullStar key={keyNumber} />;
