@@ -1,0 +1,24 @@
+@import "../../../../styles/search-variables";
+
+.wrapper {
+  box-sizing: border-box;
+  padding: 10px;
+
+  background-color: white;
+  margin-bottom: 10px;
+
+  font-family: Arial;
+  font-size: 14px;
+  width: 100%;
+
+  border-bottom: 1px solid rgb(233, 233, 233);
+
+  display: flex;
+  align-items: center;
+
+  padding-left: 10px;
+
+  &Loading {
+    color: $color-light-grey;
+  }
+}

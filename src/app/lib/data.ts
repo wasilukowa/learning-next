@@ -36,3 +36,20 @@ export const getRatingStarsFromAPI = async () => {
     console.error(err);
   }
 };
+
+export const getSearchDataAPI = async () => {
+  try {
+    const controller = new AbortController();
+    const { signal } = controller;
+
+    new Promise((resolve) => setTimeout(resolve, 2000));
+    const data = await getDataFromAPI(
+      'http://localhost:3001/api/data/searchData',
+      signal,
+    );
+    controller.abort();
+    return data;
+  } catch (err) {
+    console.error(err);
+  }
+};

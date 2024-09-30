@@ -1,0 +1,11 @@
+@import "../../../../../styles/search-variables";
+
+.wrapperName {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 80%;
+
+  &Bold {
+    font-weight: 900;
+  }
+}

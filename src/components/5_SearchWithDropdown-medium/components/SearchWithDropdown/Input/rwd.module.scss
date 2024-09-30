@@ -1,0 +1,23 @@
+@import "../../../styles/search-breakpoints";
+@import "./base.module.scss";
+
+@media (min-width: $search-breakpoint-2) {
+  .wrapper {
+    width: $width-medium;
+    margin: 0 auto;
+
+    .searchImage {
+      display: block;
+      position: absolute;
+      right: 14px;
+      top: 7px;
+      width: 24px;
+    }
+  }
+}
+
+@media (min-width: $search-breakpoint-3) {
+  .wrapper {
+    width: $width-long;
+  }
+}

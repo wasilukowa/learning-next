@@ -1,0 +1,26 @@
+@import "../../../styles/search-variables";
+
+.wrapper {
+  width: 100%;
+  position: relative;
+
+  display: block;
+
+  &Input {
+    box-sizing: border-box;
+    width: 100%;
+    background-color: #f7f7f7;
+    border: 1px solid #d1d1d1;
+    outline: none;
+    color: #858585;
+    padding: 10px 20px;
+    height: 40px;
+    border-radius: 20px;
+    box-shadow: inset rgba(0, 0, 0, 0.01) 0px 0px 10px 2px;
+    font-size: 14px;
+  }
+
+  .searchImage {
+    display: none;
+  }
+}

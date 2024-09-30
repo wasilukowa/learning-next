@@ -1,0 +1,16 @@
+.wrapper {
+  max-width: 1000px;
+  width: 95%;
+  margin: 0 auto;
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+
+  &Input {
+    box-sizing: border-box;
+    width: 100%;
+  }
+}

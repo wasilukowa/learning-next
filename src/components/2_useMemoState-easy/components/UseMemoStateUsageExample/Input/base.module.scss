@@ -2,9 +2,6 @@
 @import '../../../styles/useMemoVariables';
 
 .wrapper {
-  // display: flex;
-  // flex-basis: 1fr 1fr;
-
   &Explanation {
     width: 100%;
   }
@@ -24,7 +21,6 @@
   &Number {
     min-height: 100px;
     text-align: start;
-    // height: 200px !important;
   }
 
   &Error {
