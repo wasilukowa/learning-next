@@ -1,6 +1,6 @@
-import { RatingStars } from '../../../_components/1_RatingStars-easy/components';
+import { RatingStars } from '../../components/1_RatingStars-easy/components';
 
-import { RatingStarsSkeleton } from '../../../_components/1_RatingStars-easy/components/RatingStars/Skeleton';
+import { RatingStarsSkeleton } from '../../components/1_RatingStars-easy/components/RatingStars/Skeleton';
 import { Suspense } from 'react';
 
 const RatingStarsPage = async () => {

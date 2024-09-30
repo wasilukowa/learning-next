@@ -1,9 +1,9 @@
 import type { Metadata } from 'next';
-import { Navigation } from '../../_components/Navigation';
-import { roboto, roboto_condensed } from './ui/fonts';
+import { Navigation } from '../components/Navigation';
+import { roboto, roboto_condensed } from '../styles/fonts';
 
-import './ui/globals.scss';
-import styles from './ui/rwd.module.scss';
+import '../styles/globals.scss';
+import styles from '../styles/rwd.module.scss';
 
 const { wrapper } = styles;
 
@@ -25,6 +25,7 @@ export default function RootLayout({
       <body>
         <Navigation />
         <main className={wrapper}>{children}</main>
+        <footer></footer>
       </body>
     </html>
   );

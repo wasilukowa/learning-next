@@ -1,4 +1,4 @@
-import { ModalUsageExample } from '../../../_components/4_Modal-medium/components';
+import { ModalUsageExample } from '../../components/4_Modal-medium/components';
 
 const data = {
   name: 'Modal',

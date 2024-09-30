@@ -1,4 +1,4 @@
-import styles from './ui/rwd.module.scss';
+import styles from '../styles/rwd.module.scss';
 
 const { wrapperHome, wrapperHomeTitle } = styles;
 

@@ -1,0 +1,33 @@
+@import '../../../../../styles/variables';
+@import '../../../styles/useMemoVariables';
+
+.wrapper {
+  // display: flex;
+  // flex-basis: 1fr 1fr;
+
+  &Explanation {
+    width: 100%;
+  }
+
+  &Textarea {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    min-width: $input-min-width;
+    min-height: $input-min-height;
+
+    &Button {
+      margin-top: 20px;
+    }
+  }
+  &Number {
+    min-height: 100px;
+    text-align: start;
+    // height: 200px !important;
+  }
+
+  &Error {
+    height: 60px;
+  }
+}

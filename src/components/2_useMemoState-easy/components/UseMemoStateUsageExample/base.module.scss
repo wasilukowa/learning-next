@@ -1,0 +1,39 @@
+.wrapper {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+
+  width: 100%;
+  margin: 10px;
+
+  padding-right: 20px;
+
+  &Input {
+    flex-basis: 60%;
+  }
+
+  &InputBlockHolder {
+    display: flex;
+    flex-basis: fr fr;
+  }
+
+  &Button {
+    display: block;
+
+    width: 200px;
+
+    margin: 0 10px 10px 0;
+  }
+
+  &Error {
+    height: 30px;
+    margin-top: 6px;
+    margin-bottom: 6px;
+
+    color: red;
+
+    font-weight: 600;
+    font-size: 14px;
+  }
+}

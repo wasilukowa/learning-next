@@ -21,14 +21,18 @@ export const getDataFromAPI = async (path: string, signal: AbortSignal) => {
 //   getDataFromAPI('http://localhost:3001/api/data/navigationMenu');
 
 export const getRatingStarsFromAPI = async () => {
-  const controller = new AbortController();
-  const { signal } = controller;
+  try {
+    const controller = new AbortController();
+    const { signal } = controller;
 
-  new Promise((resolve) => setTimeout(resolve, 2000));
-  const data = await getDataFromAPI(
-    'http://localhost:3001/api/data/ratingStars',
-    signal,
-  );
-  controller.abort();
-  return data;
+    new Promise((resolve) => setTimeout(resolve, 2000));
+    const data = await getDataFromAPI(
+      'http://localhost:3001/api/data/ratingStars',
+      signal,
+    );
+    controller.abort();
+    return data;
+  } catch (err) {
+    console.error(err);
+  }
 };

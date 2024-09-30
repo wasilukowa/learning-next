@@ -1,6 +1,6 @@
-import { UseGeoUsageExample } from '../../../_components/3_useGeo-easy/components';
+import { UseGeoUsageExample } from '../../components/3_useGeo-easy/components';
 
-import data from '../../../data/homePageData.json';
+import data from '../../data/homePageData.json';
 
 export default function UseGeoPage() {
   const geoLabels = data['use-geo'].data.labels;
