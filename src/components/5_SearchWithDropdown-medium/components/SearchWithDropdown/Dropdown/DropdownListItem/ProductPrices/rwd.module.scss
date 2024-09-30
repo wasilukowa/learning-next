@@ -1,13 +1,13 @@
-@import "./base.module.scss";
-@import "../../../../../styles/search-breakpoints";
+@import './base.module.scss';
+@import '../../../../../styles/breakpoints';
 
-@media (min-width: $search-breakpoint-1) {
+@media (min-width: $breakpoint-2) {
   .wrapper {
     min-width: 120px;
   }
 }
 
-@media (min-width: $search-breakpoint-2) {
+@media (min-width: $breakpoint-3) {
   .wrapper {
     flex-direction: row;
   }

@@ -2,7 +2,8 @@ import { SearchWithDropdown } from '../../components/5_SearchWithDropdown-medium
 import { getSearchDataAPI } from '../lib/data';
 
 export default async function Search() {
-  const data = await getSearchDataAPI();
+  const searchData = await getSearchDataAPI();
+  const { data, labels } = searchData;
 
-  return <SearchWithDropdown data={data.data.data} labels={data.data.labels} />;
+  return <SearchWithDropdown data={data} labels={labels} />;
 }

@@ -177,53 +177,48 @@ const ratingStarsData = {
 };
 
 const searchWithDropdownData = {
-  name: 'Search with dropdown',
-  id: 'search',
-  url: '/search',
-  data: {
-    labels: {
-      loading: 'Searching...',
-      noResults: 'Sorry, nothing to show.',
-      toShortQuery: 'Your query needs to have more than 3 characters.',
-    },
-    data: [
-      {
-        name: 'Fixed TOC - table of contents for WordPress plugin',
-        regularPrice: 20,
-        salePrice: 18,
-        currency: '$',
-        id: '23234098AED',
-      },
-      {
-        name: 'Jobify - The Most Popular WordpPress Job Board Theme',
-        regularPrice: 0,
-        salePrice: 3.99123,
-        currency: 'zł',
-        id: '23234238WER',
-      },
-      {
-        name: 'Lorem ipsum',
-        regularPrice: 99,
-        salePrice: 99,
-        currency: '$',
-        id: '23423498AAA',
-      },
-      {
-        name: 'Lorem ipsum negative',
-        regularPrice: 99,
-        salePrice: -99,
-        currency: 'zł',
-        id: '23423498AAA',
-      },
-      {
-        name: 'Lorem ipsum lorem negative lorem',
-        regularPrice: 99,
-        salePrice: -99,
-        currency: 'zł',
-        id: '23423498AAA',
-      },
-    ],
+  labels: {
+    loading: 'Searching...',
+    noResults: 'Sorry, nothing to show.',
+    toShortQuery: 'Your query needs to have more than 3 characters.',
   },
+  data: [
+    {
+      name: 'Fixed TOC - table of contents for WordPress plugin',
+      regularPrice: 20,
+      salePrice: 18,
+      currency: '$',
+      id: '23234098AED',
+    },
+    {
+      name: 'Jobify - The Most Popular WordpPress Job Board Theme',
+      regularPrice: 0,
+      salePrice: 3.99123,
+      currency: 'zł',
+      id: '23234238WER',
+    },
+    {
+      name: 'Lorem ipsum',
+      regularPrice: 99,
+      salePrice: 99,
+      currency: '$',
+      id: '23423498AAA',
+    },
+    {
+      name: 'Lorem ipsum negative',
+      regularPrice: 99,
+      salePrice: -99,
+      currency: 'zł',
+      id: '23423498AAA',
+    },
+    {
+      name: 'Lorem ipsum lorem negative lorem',
+      regularPrice: 99,
+      salePrice: -99,
+      currency: 'zł',
+      id: '23423498AAA',
+    },
+  ],
 };
 
 app.get('/api/data/ratingStars', (req, res) => {
