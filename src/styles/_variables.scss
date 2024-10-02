@@ -8,9 +8,60 @@ $color-dark-secondary: #353638;
 $color-light: #feffff;
 $color-light-secondary: #def2f1;
 
+// rating stars
+
+$font-size-s: 16px;
+$font-size-m: 20px;
+$font-size-l: 24px;
+$star-size: 20px;
+$star-size-margin: 2px;
+
+$full-star-color: '#ffc107';
+$blank-star-color: '#dddddd';
+
+// use memo variables:
+
+$input-min-height: 400px;
+$input-min-width: 300px;
+
+// modal
+
+$color-font: #2f3640;
+$color-accent: #192a56;
+$color-accent-secondary: #fbc531;
+
+$color-modal-background: #fff;
+
+$z-index-modal: 999999;
+
 // search with dropdown:
 
 $width-medium: 400px;
 $width-long: 600px;
 
 $color-light-grey: #999;
+
+// pagination-table
+
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@400;600&display=swap');
+
+$font-family: 'Archivo Narrow', sans-serif;
+$font-weight-normal: 400;
+$font-weight-semi-bold: 600;
+
+$cell-padding-horizontal-s: 4px;
+$cell-padding-vertical-s: 8px;
+$cell-padding-horizontal-m: 6px;
+$cell-padding-vertical-m: 10px;
+$cell-padding-horizontal-l: 10px;
+$cell-padding-vertical-l: 14px;
+
+$color-border-table: rgb(208, 208, 208);
+
+$header-border-bottom: 2px solid $color-border-table;
+$cell-border-bottom: 1px solid $color-border-table;
+
+$grid-template-columns: 1fr 3fr 3fr 2fr 40%;
+
+$pagination-button-color: yellow;
+$pagination-button-color-hoover: rgb(129, 129, 7);

@@ -1,7 +1,7 @@
-@import "./base.module.scss";
-@import "../../../../styles/rating-stars-breakpoints";
+@import './base.module.scss';
+@import '../../../../styles/breakpoints';
 
-@media (min-width: $breakpoint-2) {
+@media (min-width: $breakpoint-3) {
   .wrapper {
     &Header {
       flex-direction: row;

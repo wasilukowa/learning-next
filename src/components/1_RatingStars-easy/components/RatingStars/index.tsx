@@ -1,7 +1,7 @@
 import { AverageScore } from './AverageScore';
 import { RatingsList } from './RatingsList';
 
-import { getRatingStarsFromAPI } from '@/app/lib/data';
+import { getRatingStarsFromAPI } from '@/lib/data';
 
 import style from './rwd.module.scss';
 const { wrapper } = style;

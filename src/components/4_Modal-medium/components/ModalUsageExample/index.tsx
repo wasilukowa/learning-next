@@ -6,7 +6,7 @@ import { Modal } from '../../Shared';
 import { ModalUsageExampleProps } from './types';
 
 import style from './rwd.module.scss';
-const { wrapper, buttonGlobal } = style;
+const { wrapper, wrapperButton } = style;
 
 export const ModalUsageExample = ({
   modalData,
@@ -16,7 +16,7 @@ export const ModalUsageExample = ({
 
   return (
     <div className={wrapper}>
-      <button className={buttonGlobal} onClick={openModal}>
+      <button className={`${wrapperButton} button-default`} onClick={openModal}>
         {openModalButtonLabel}
       </button>
       <Modal modalData={modalData} isOpen={isOpen} closeModal={closeModal} />

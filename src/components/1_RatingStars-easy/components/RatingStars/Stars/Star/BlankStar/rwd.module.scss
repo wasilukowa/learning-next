@@ -1,7 +1,7 @@
 @import './base.module.scss';
-@import '../../../../../styles/rating-stars-breakpoints';
+@import '../../../../../styles/breakpoints';
 
-@media (min-width: $breakpoint-1) {
+@media (min-width: $breakpoint-2) {
   .star {
     width: $star-size;
     height: $star-size;

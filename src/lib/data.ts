@@ -53,3 +53,20 @@ export const getSearchDataAPI = async () => {
     console.error(err);
   }
 };
+
+export const getPaginationDataFromAPI = async () => {
+  try {
+    const controller = new AbortController();
+    const { signal } = controller;
+
+    new Promise((resolve) => setTimeout(resolve, 2000));
+    const data = await getDataFromAPI(
+      'http://localhost:3001/api/data/pagination-table',
+      signal,
+    );
+    controller.abort();
+    return data;
+  } catch (err) {
+    console.error(err);
+  }
+};

@@ -1,7 +1,7 @@
-@import "./base.module.scss";
-@import "../../styles/modal-breakpoints";
+@import './base.module.scss';
+@import '../../styles/breakpoints';
 
-@media (min-width: $modal-breakpoint-1) {
+@media (min-width: $breakpoint-2) {
   .wrapper {
     &Modal {
       width: 80vw;
@@ -15,7 +15,7 @@
   }
 }
 
-@media (min-width: $modal-breakpoint-2) {
+@media (min-width: $breakpoint-3) {
   .wrapper {
     &Modal {
       max-width: 700px;

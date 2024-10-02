@@ -1,7 +1,7 @@
-@import "./base.module.scss";
-@import "../../../styles/modal-breakpoints";
+@import './base.module.scss';
+@import '../../../styles/breakpoints';
 
-@media (min-width: $modal-breakpoint-1) {
+@media (min-width: $breakpoint-2) {
   .wrapper {
     &Header {
       font-size: 26px;
