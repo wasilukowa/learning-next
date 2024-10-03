@@ -4,26 +4,32 @@
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
+
   min-height: 40px;
 
   &Button {
-    font-family: $font-roboto;
-    font-weight: 300;
     max-height: 40px;
-    font-size: 20px;
-    cursor: pointer;
+
     border: none;
     padding: 4px 12px;
 
+    font-family: $font-roboto;
+    font-weight: 300;
+    font-size: 20px;
+
+    cursor: pointer;
+
     &Close {
       background-color: $color-font;
+
       color: white;
     }
 
     &CTA {
       margin-left: 10px;
-      font-weight: 400;
       background-color: $color-accent-secondary;
+
+      font-weight: 400;
       color: $color-font;
     }
   }

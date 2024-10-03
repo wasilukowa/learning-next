@@ -12,6 +12,7 @@ export const ModalUsageExample = ({
   modalData,
   openModalButtonLabel,
 }: ModalUsageExampleProps) => {
+  
   const { isOpen, openModal, closeModal } = useModal({ opened: false });
 
   return (

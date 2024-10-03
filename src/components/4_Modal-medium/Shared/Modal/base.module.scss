@@ -2,31 +2,36 @@
 
 .wrapper {
   &Background {
-    z-index: $z-index-modal;
     position: fixed;
+
     left: 0;
     right: 0;
     top: 0;
     bottom: 0;
+
     background-color: rgba(0, 0, 0, 0.5);
+
+    z-index: $z-index-modal;
   }
 
   &Modal {
-    z-index: $z-index-modal;
     box-sizing: border-box;
-    padding: 20px;
-    margin: 0;
 
     position: fixed;
+    top: 0;
     left: 0;
     right: 0;
-    top: 0;
     bottom: 0;
 
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 
+    padding: 20px;
+    margin: 0;
+
     background-color: $color-modal-background;
+
+    z-index: $z-index-modal;
   }
 }

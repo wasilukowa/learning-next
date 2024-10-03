@@ -1,37 +1,41 @@
 @import '../../../styles/variables';
 
-.wrapper {
-  width: 100%;
+$btn-size: 26px;
+$btn-line-width: 4px;
+$btn-line-heigth: 16px;
 
+.wrapper {
   display: flex;
   justify-content: space-between;
 
+  width: 100%;
+
   &Header {
+    display: inline;
+
+    padding: 0;
+    margin: 0;
+
     font-family: $font-roboto;
     font-size: 22px;
     font-weight: 400;
     color: $color-accent;
-
-    display: inline;
-    margin: 0;
-    padding: 0;
   }
 
   &Button {
-    $btn-size: 26px;
-    $btn-line-width: 4px;
-    $btn-line-heigth: 16px;
     box-sizing: border-box;
-    font-family: Arial;
+    position: relative;
+
     width: $btn-size;
     height: $btn-size;
 
-    cursor: pointer;
     border: none;
+
+    font-family: Arial;
 
     background-color: $color-font;
 
-    position: relative;
+    cursor: pointer;
     opacity: 0.4;
 
     &:hover {
@@ -42,14 +46,15 @@
       &:before,
       &:after {
         position: absolute;
-
         top: $btn-line-width + 1px;
         left: calc(($btn-size / 2) - 2px);
-        display: block;
 
+        display: block;
         content: ' ';
+
         height: $btn-line-heigth;
         width: $btn-line-width;
+
         background-color: white;
       }
 

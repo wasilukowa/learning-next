@@ -15,7 +15,6 @@ export const useModal = (visibility: useMemoProps): useMemoReturn => {
 
     const documentBody = document.querySelector('body');
     const isDocumentBodyDefined = documentBody !== null;
-
     if (!isDocumentBodyDefined) return;
 
     documentBody.style.overflowY = 'hidden';
@@ -29,7 +28,6 @@ export const useModal = (visibility: useMemoProps): useMemoReturn => {
 
     const documentBody = document.querySelector('body');
     const isDocumentBodyDefined = documentBody !== null;
-
     if (!isDocumentBodyDefined) return;
 
     documentBody.style.overflowY = 'auto';
