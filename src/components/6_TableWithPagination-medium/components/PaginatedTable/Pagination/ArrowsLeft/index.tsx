@@ -1,9 +1,8 @@
-import style from "./rwd.module.scss";
+import Image from 'next/image';
+import { ArrowLeftProps } from './types';
+
+import style from './rwd.module.scss';
 const { wrapper, wrapperImage, left, wrapperButton } = style;
-
-import Image from "next/image";
-
-import { ArrowLeftProps } from "./types";
 
 export const ArrowsLeft = ({ actualPageIndex, goToPage }: ArrowLeftProps) => {
   const isFirstPage = actualPageIndex === 0;

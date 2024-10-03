@@ -1,22 +1,26 @@
 @import '../../../../styles/variables';
 
 .wrapper {
-  min-width: 160px;
-  max-width: 280px;
   display: flex;
   justify-content: space-between;
 
+  min-width: 160px;
+  max-width: 280px;
+
   &PageNumber {
-    font-family: $font-roboto;
-    font-size: $font-size-s;
     display: block;
+
     padding: 5px;
     border-radius: 2px;
     margin: 1px;
 
+    font-family: $font-roboto;
+    font-size: $font-size-s;
+
     &:hover {
-      transform: scale(1.1);
       cursor: pointer;
+
+      transform: scale(1.1);
     }
 
     &:disabled {
@@ -24,8 +28,9 @@
     }
 
     &Active {
-      font-weight: 600;
       background-color: $color-main;
+
+      font-weight: 600;
     }
   }
 }

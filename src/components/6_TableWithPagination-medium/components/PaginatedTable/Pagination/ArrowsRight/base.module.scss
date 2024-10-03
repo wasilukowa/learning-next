@@ -4,19 +4,23 @@
   display: flex;
 
   &Button {
-    background-color: $pagination-button-color;
+    border: none;
     border-radius: 3px;
     margin: 2px;
+
+    background-color: $pagination-button-color;
+
     outline: none;
-    border: none;
 
     &:hover {
       background-color: $pagination-button-color-hoover;
+
       cursor: pointer;
     }
 
     &:disabled {
       background-color: rgb(185, 185, 185);
+
       cursor: auto;
     }
   }
