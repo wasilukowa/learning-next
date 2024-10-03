@@ -1,4 +1,4 @@
-import { TDebounceChangeHandler } from "../../../hooks/type";
+import { TDebounceChangeHandler } from "../../SearchWithDropdown/types";
 
 export type InputProps = {
   handleChange: TDebounceChangeHandler;

@@ -1,11 +1,15 @@
 @import '../../../../../../styles/variables';
 
 .sale {
-  display: block;
   box-sizing: border-box;
+
+  display: block;
+
+  min-width: 50px;
   margin: 5px;
+
   color: #111;
+
   font-weight: 600;
   text-align: right;
-  min-width: 50px;
 }

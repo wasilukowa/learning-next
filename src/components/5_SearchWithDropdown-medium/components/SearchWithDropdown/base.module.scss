@@ -1,7 +1,4 @@
 .wrapper {
-  max-width: 1000px;
-  width: 95%;
-  margin: 0 auto;
   box-sizing: border-box;
 
   display: flex;
@@ -9,8 +6,13 @@
   justify-content: center;
   align-items: flex-start;
 
+  width: 95%;
+  max-width: 1000px;
+  margin: 0 auto;
+
   &Input {
     box-sizing: border-box;
+
     width: 100%;
   }
 }

@@ -3,7 +3,7 @@
 import { Input } from './Input';
 import { Dropdown } from './Dropdown';
 
-import { useSearch } from '../../hooks';
+import { useSearch } from './useSearch';
 import { SearchWithDropdownProps } from './types';
 
 import style from './rwd.module.scss';

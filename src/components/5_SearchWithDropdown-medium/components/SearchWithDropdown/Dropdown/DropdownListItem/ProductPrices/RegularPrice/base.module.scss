@@ -1,9 +1,13 @@
 .regular {
-  display: block;
   box-sizing: border-box;
-  margin: 5px;
-  text-decoration: line-through;
-  color: grey;
-  text-align: right;
+
+  display: block;
+
   min-width: 60px;
+  margin: 5px;
+
+  color: grey;
+
+  text-decoration: line-through;
+  text-align: right;
 }

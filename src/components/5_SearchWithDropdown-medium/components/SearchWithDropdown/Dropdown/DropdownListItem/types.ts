@@ -1,4 +1,4 @@
-import { TProduct } from "../../../../types";
+import { TProduct } from '../../types';
 
 export type DropdownListItemProps = TProduct & {
   phrase: string;

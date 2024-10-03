@@ -1,9 +1,9 @@
 'use client';
 
 import { useState } from 'react';
-import { UseSearchProps, UseSearchReturn } from './type';
+import { TProduct, UseSearchProps, UseSearchReturn } from './types';
 
-import { delayedSearch } from '../utils';
+import { delayedSearch } from '../../utils';
 
 import { debounce } from 'lodash';
 
@@ -12,7 +12,7 @@ export const useSearch = (searchData: UseSearchProps): UseSearchReturn => {
 
   const [isBusy, setIsBusy] = useState(false);
 
-  const [result, setResult] = useState([]);
+  const [result, setResult] = useState<TProduct[]>([]);
 
   const [isDropdownVisible, setDropdownVisibility] = useState(false);
 

@@ -1,10 +1,10 @@
-import { getPriceWithCurrency } from "../../../../../../utils";
+import { getPriceWithCurrency } from '../../../../../../utils';
 
-import style from "./rwd.module.scss";
+import style from './rwd.module.scss';
 
 const { regular } = style;
 
-import { RegularPriceProps } from "./types";
+import { RegularPriceProps } from './types';
 
 export const RegularPrice = ({ price, currency }: RegularPriceProps) => {
   const isPriceNegative = price < 0;

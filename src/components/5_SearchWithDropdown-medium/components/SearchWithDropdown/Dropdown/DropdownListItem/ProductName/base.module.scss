@@ -1,9 +1,10 @@
 @import '../../../../../styles/variables';
 
 .wrapperName {
+  width: 80%;
+
   margin-top: 10px;
   margin-bottom: 10px;
-  width: 80%;
 
   &Bold {
     font-weight: 900;

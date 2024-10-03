@@ -1,7 +1,7 @@
-import Image from "next/image";
-import { InputProps } from "./type";
+import Image from 'next/image';
+import { InputProps } from './type';
 
-import style from "./rwd.module.scss";
+import style from './rwd.module.scss';
 const { wrapper, wrapperInput, searchImage } = style;
 
 export const Input = ({ handleChange }: InputProps) => {

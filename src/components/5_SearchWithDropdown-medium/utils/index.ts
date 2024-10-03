@@ -1,4 +1,4 @@
-import { TProduct } from '../types';
+import { TProduct } from '../components/SearchWithDropdown/types';
 
 import currencyBase from '../../../data/currency.json';
 
@@ -18,7 +18,7 @@ export const delayedSearch = async (
   products: TProduct[],
 ): Promise<TProduct[]> => {
   return new Promise((resolve) => {
-    setTimeout(() => resolve(searchByPhrase(phrase, products)), 2000);
+    setTimeout(() => resolve(searchByPhrase(phrase, products)), 1000);
   });
 };
 
