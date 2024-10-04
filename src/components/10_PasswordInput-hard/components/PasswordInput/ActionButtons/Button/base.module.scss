@@ -1,0 +1,16 @@
+@import "../../../../../../styles/variables";
+
+.wrapper {
+  border: none;
+  padding: 10px 20px;
+  background-color: $color-main;
+  font-family: $font-main;
+  font-size: 16px;
+
+  margin: 5px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $color-main-darker;
+  }
+}

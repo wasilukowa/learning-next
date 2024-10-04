@@ -1,0 +1,14 @@
+@import "../../../../../../../styles/variables";
+
+.wrapper {
+
+        min-height: 26px;
+        &Error {
+            color: rgb(126, 6, 6);
+            font-size: 12px;
+            margin-right: 10px;
+            &Hidden {
+                display: none;
+            }
+        }
+}

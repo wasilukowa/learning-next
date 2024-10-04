@@ -1,0 +1,10 @@
+@import "../../../../../../styles/variables";
+
+.wrapper {
+  width: 100%;
+
+  &Information {
+    font-family: $font-main;
+    color: $color-font;
+  }
+}

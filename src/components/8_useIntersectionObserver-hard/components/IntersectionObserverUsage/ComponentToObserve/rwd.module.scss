@@ -1,0 +1,18 @@
+@import "./base.module.scss";
+@import "../../../../../styles/breakpoints";
+
+@media (min-width: $breakpoint-2) {
+  .wrapper {
+    padding: 10px;
+    font-size: $font-size-m;
+    line-height: calc(2 * $font-size-m);
+  }
+}
+
+@media (min-width: $breakpoint-3) {
+  .wrapper {
+    padding: 15px;
+    font-size: $font-size-l;
+    line-height: calc(2 * $font-size-l);
+  }
+}

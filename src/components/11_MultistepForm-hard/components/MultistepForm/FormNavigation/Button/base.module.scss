@@ -1,0 +1,43 @@
+@import "../../../../styles/multistep-form-variables.scss";
+
+.button {
+
+    &Active {
+        background-color: $color-main;
+        font-family: $font-main;
+    
+        flex-grow: 1;
+    
+        max-width: 48%;
+        outline: none;
+        border: none;
+        margin: 10px;
+        padding: 10px;
+    
+        font-size: 20px;
+    
+        cursor: pointer;
+    
+        &:focus {
+            outline: 2px solid $color-main-darker;
+        }
+    }
+
+    &Disabled {
+        background-color: $form-button-disabled;
+        font-family: $font-main;
+    
+        flex-grow: 1;
+        max-width: 48%;
+
+    
+        outline: none;
+        border: none;
+        margin: 10px;
+        padding: 10px;
+    
+        font-size: 20px;
+    
+        cursor: pointer;
+    }
+}

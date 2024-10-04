@@ -1,0 +1,8 @@
+@import "../../../../../../styles/variables";
+
+.wrapper {
+  &Information {
+    font-family: $font-main;
+    color: $color-font;
+  }
+}

@@ -1,0 +1,39 @@
+@import "../../../../../../../styles/variables";
+
+.wrapper {
+  box-sizing: border-box;
+  font-family: $font-main;
+
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: row-reverse;
+  align-items: center;
+
+  width: 100%;
+
+  border-radius: 5px;
+  margin-bottom: 10px;
+  padding: 10px;
+
+  &Details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    padding: 10px;
+    padding-left: 14px;
+
+    &Name {
+      color: $color-secondary;
+      display: flex;
+      flex-wrap: wrap;
+      margin: 20px 0;
+
+      font-size: 18px;
+    }
+
+    &Other {
+      font-size: 16px;
+    }
+  }
+}

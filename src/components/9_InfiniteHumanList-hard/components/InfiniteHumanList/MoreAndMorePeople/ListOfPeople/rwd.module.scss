@@ -1,0 +1,18 @@
+@import "./base.module.scss";
+@import "../../../../styles/infiniteScroll_breakpoints";
+
+@media (min-width: $infiniteScroll-breakpoint-1) {
+  .wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+}
+
+@media (min-width: $infiniteScroll-breakpoint-2) {
+  .wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+  }
+}

@@ -1,0 +1,14 @@
+@import "../../../../../styles/variables";
+@import "../../../styles/password-input-variables";
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+
+  padding: 10px;
+
+  &Information {
+    font-family: $font-main;
+    color: $color-invalid-password;
+  }
+}

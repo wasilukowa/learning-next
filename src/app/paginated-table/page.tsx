@@ -3,7 +3,6 @@ import { getPaginationDataFromAPI } from '@/lib/data';
 
 const PaginatedTablePage = async () => {
   const paginationData = await getPaginationDataFromAPI();
-  console.log(paginationData);
   const { headers, entriesOnPage, siblingCount, data } = paginationData;
 
   return (

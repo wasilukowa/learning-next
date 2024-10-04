@@ -1,0 +1,8 @@
+@import "./base.module.scss";
+@import "../../styles/infiniteScroll_breakpoints";
+
+@media (min-width: $infiniteScroll-breakpoint-1) {
+  .wrapper {
+    padding: 20px;
+  }
+}

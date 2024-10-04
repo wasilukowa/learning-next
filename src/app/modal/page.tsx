@@ -22,7 +22,7 @@ const data = {
   },
 };
 
-const RatingStarsPage = async () => {
+const ModalPage = async () => {
   return (
     <ModalUsageExample
       openModalButtonLabel={data.data.openModalButtonLabel}
@@ -31,4 +31,4 @@ const RatingStarsPage = async () => {
   );
 };
 
-export default RatingStarsPage;
+export default ModalPage;

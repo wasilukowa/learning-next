@@ -1,0 +1,37 @@
+@import "../../../../../../styles/variables";
+
+.wrapperInput {
+    font-family: $font-main;
+
+    display: flex;
+    // align-items: center;
+
+    flex-direction: column;
+    width: 100%;
+
+    box-sizing: border-box;
+    padding-right: 20px;
+    // padding-bottom: 20px;
+    
+    &Label {
+        display: inline-block;
+        margin-bottom: 10px;
+        margin-top: 10px;
+    }
+    
+    &Field {
+        flex-grow: 1;
+        min-height: 30px;
+
+        outline: none;
+        border: 0px solid transparent;
+        margin-bottom: 10px;
+
+        padding-right: 5px;
+        border-radius: 2px;
+
+        &:focus {
+            outline: 2px solid $color-secondary;
+        }
+    }
+}

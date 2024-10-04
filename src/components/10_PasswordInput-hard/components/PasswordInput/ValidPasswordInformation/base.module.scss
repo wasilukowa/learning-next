@@ -1,0 +1,20 @@
+@import "../../../../../styles/variables";
+
+.wrapper {
+  min-height: 60px;
+  width: 40%;
+  padding: 5px;
+  margin: 0 auto;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &Information {
+    font-family: $font-main;
+    font-size: 26px;
+    font-weight: 600;
+    color: $color-secondary;
+    text-align: center;
+  }
+}
