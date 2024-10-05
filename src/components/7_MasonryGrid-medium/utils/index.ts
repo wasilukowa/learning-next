@@ -29,21 +29,19 @@ export const splitImagesIntoArrays = <T extends TWithSizeRatio>(
 };
 
 export const getWindowWidth = () => {
-  const isWindowDefined = typeof window !== "undefined";
+  const isWindowDefined = typeof window !== 'undefined';
   if (!isWindowDefined) return;
 
   return window.innerWidth;
 };
 
 export const getNumberOfColumns = (width: number) => {
-  if (width === 0) return;
+  if (width === 0) return 0;
   if (width < 500) {
     return 1;
   }
-  if (width > 500 && width < 1000) {
+  if (width >= 500 && width < 1000) {
     return 2;
   }
-  if (width >= 1000) {
-    return 4;
-  }
+  return 4;
 };

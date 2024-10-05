@@ -1,4 +1,4 @@
-import { MutableRefObject } from "react";
+import { MutableRefObject } from 'react';
 
 export type TImageElement = {
   id: string;
@@ -16,7 +16,7 @@ export type MasonryGridProps = {
 };
 
 type UseMasonryReturn = {
-  containerRef: MutableRefObject<HTMLDivElement>;
+  containerRef: MutableRefObject<HTMLDivElement | null>;
   imagesDevided: TImageElementWithSizeRatio[][];
   isHelpContainerVisible: boolean;
 };

@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 
 import { splitImagesIntoArrays } from '../../utils';
 import { useColumns } from './useColumns';
@@ -41,41 +41,44 @@ export const useMasonryGrid: TUseMasonryGrid = (images) => {
     }, 10);
   };
 
-  const createImagesArrayWithAspectRatios = (imagesArr: HTMLImageElement[]) => {
-    const imagesNew = [];
+  const createImagesArrayWithAspectRatios = useCallback(
+    (imagesArr: HTMLImageElement[]) => {
+      // 1) Reduce
+      // 2) Gowno
+      // 3) FOR CONST OF
+      // 4) map +
 
-    // 1) Reduce
-    // 2) Gowno
-    // 3) FOR CONST OF
-    // 4) map + filter
-    const rawImages = images.map((image, index) => {
-      const height = imagesArr[index].clientHeight;
+      const test = images.reduce((acc, img, index) => {
+        const height = imagesArr[index].clientHeight;
 
-      if (height === 0) return null;
+        if (height === 0) return [];
 
-      const width = imagesArr[index].clientWidth;
-      const sizeRatio = height / width;
-      const newImgObject = {
-        ...image,
-        sizeRatio,
-      };
+        const width = imagesArr[index].clientWidth;
+        const sizeRatio = height / width;
 
-      // imagesNew.push(newImgObject);
+        return acc.concat([
+          {
+            ...img,
+            sizeRatio,
+          },
+        ]);
+      }, [] as TImageElementWithSizeRatio[]);
+      // return test;
 
-      return newImgObject;
-    });
-
-    setImagesWithSizeRatio(rawImages);
-  };
+      setImagesWithSizeRatio(test);
+    },
+    [numberOfColumns],
+  );
 
   // isDefined -> variable "is" Type
 
   useEffect(() => {
-    const isContainerRefDefined = containerRef.current !== null;
+    const potentialReference = containerRef.current;
+    const isContainerRefDefined = potentialReference !== null;
     if (!isContainerRefDefined) return;
 
     const imagesArr = Array.from(
-      containerRef.current.children,
+      potentialReference.children,
     ) as HTMLImageElement[];
     areAllHelpContainerImagesHeightsAvailable(imagesArr);
   }, [containerRef.current]);
@@ -92,7 +95,7 @@ export const useMasonryGrid: TUseMasonryGrid = (images) => {
       );
       setImagesDevided(imagesDevided);
     }
-  }, [areHelpContainerImagesLoaded]);
+  }, [areHelpContainerImagesLoaded, numberOfColumns]);
 
   return {
     containerRef,

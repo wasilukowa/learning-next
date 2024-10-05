@@ -1,5 +1,7 @@
-import { useEffect, useState } from "react";
-import { getNumberOfColumns, getWindowWidth } from "../../utils";
+'use client';
+
+import { useEffect, useState } from 'react';
+import { getNumberOfColumns, getWindowWidth } from '../../utils';
 
 export const useColumns = () => {
   const [jsEnabled, setJsEnabled] = useState(false);
@@ -7,18 +9,22 @@ export const useColumns = () => {
 
   const getColumns = () => {
     const widowWidth = getWindowWidth();
+    const isWindowWithDefined = widowWidth !== undefined;
+    if (!isWindowWithDefined) return;
+
     const howManyColumns = getNumberOfColumns(widowWidth);
+
     setNumberOfColumns(howManyColumns);
   };
 
-  useEffect(() => setJsEnabled(true), []);
+  useEffect(() => {
+    setJsEnabled(true);
+  }, []);
 
   useEffect(() => {
     getColumns();
-
-    window.addEventListener("resize", getColumns);
-
-    return () => window.removeEventListener("resize", getColumns);
+    window.addEventListener('resize', getColumns);
+    return () => window.removeEventListener('resize', getColumns);
   }, [jsEnabled]);
 
   return {
