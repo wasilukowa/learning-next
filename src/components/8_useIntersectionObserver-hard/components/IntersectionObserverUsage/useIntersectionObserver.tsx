@@ -7,7 +7,8 @@ export const useIntersectionObserver: TUseIntersectionObserver = (
   callback,
   options,
 ) => {
-  if (typeof document === 'undefined') return;
+  if (typeof document === 'undefined')
+    return { referenceForIO: { current: null } };
 
   const isCallbackFunctionType = typeof callback === 'function';
   if (!isCallbackFunctionType) return { referenceForIO: { current: null } };
@@ -23,15 +24,16 @@ export const useIntersectionObserver: TUseIntersectionObserver = (
   };
 
   useEffect(() => {
-    const referenceForIOIsDefined = referenceForIO.current !== null;
-    if (!referenceForIOIsDefined) return { referenceForIO: { current: null } };
+    const potentialReference = referenceForIO.current;
+    const referenceForIOIsDefined = potentialReference !== null;
+    if (!referenceForIOIsDefined) return;
 
     const observer = new IntersectionObserver(callbackFunction, options);
 
-    observer.observe(referenceForIO.current);
+    observer.observe(potentialReference);
 
     return () => {
-      observer.unobserve(referenceForIO.current);
+      observer.unobserve(potentialReference);
     };
   }, []);
 

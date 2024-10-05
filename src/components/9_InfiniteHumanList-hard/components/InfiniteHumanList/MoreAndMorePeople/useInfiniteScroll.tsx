@@ -1,7 +1,8 @@
-import { useEffect, useRef, useState } from "react";
-import { getUsers, getScrapOfArray } from "../../../utils";
+'use client';
+import { useEffect, useRef, useState } from 'react';
+import { getUsers, getScrapOfArray } from '../../../utils';
 
-import { TUseInfiniteScroll } from "./types";
+import { TUseInfiniteScroll } from './types';
 export const useInfiniteScroll: TUseInfiniteScroll = (
   options,
   initialNumberOfData,

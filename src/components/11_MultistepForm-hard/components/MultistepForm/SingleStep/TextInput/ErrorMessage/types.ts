@@ -1,1 +1,0 @@
-export type ErrorMessageProps = ({message: string, isErrorVisible: boolean});

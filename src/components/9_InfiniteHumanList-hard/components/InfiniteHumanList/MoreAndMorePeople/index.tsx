@@ -1,12 +1,13 @@
-import { ErrorMessage } from "./ErrorMessage";
-import { ListOfPeople } from "./ListOfPeople";
-import { Loading } from "./Loading";
+'use client';
+import { ErrorMessage } from './ErrorMessage';
+import { ListOfPeople } from './ListOfPeople';
+import { Loading } from './Loading';
 
-import { MoreAndMorePeopleProps } from "./types";
+import { MoreAndMorePeopleProps } from './types';
 
-import { useInfiniteScroll } from "./useInfiniteScroll";
+import { useInfiniteScroll } from './useInfiniteScroll';
 
-import style from "./rwd.module.scss";
+import style from './rwd.module.scss';
 const { wrapper, classObserve, wrapperLoading } = style;
 
 export const MoreAndMorePeople = ({
