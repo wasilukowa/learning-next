@@ -43,12 +43,7 @@ export const useMasonryGrid: TUseMasonryGrid = (images) => {
 
   const createImagesArrayWithAspectRatios = useCallback(
     (imagesArr: HTMLImageElement[]) => {
-      // 1) Reduce
-      // 2) Gowno
-      // 3) FOR CONST OF
-      // 4) map +
-
-      const test = images.reduce((acc, img, index) => {
+      const imagesWithSizeRatio = images.reduce((acc, img, index) => {
         const height = imagesArr[index].clientHeight;
 
         if (height === 0) return [];
@@ -63,9 +58,8 @@ export const useMasonryGrid: TUseMasonryGrid = (images) => {
           },
         ]);
       }, [] as TImageElementWithSizeRatio[]);
-      // return test;
 
-      setImagesWithSizeRatio(test);
+      setImagesWithSizeRatio(imagesWithSizeRatio);
     },
     [numberOfColumns],
   );

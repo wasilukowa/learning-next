@@ -1,8 +1,8 @@
-@import "../../../../styles/variables";
+@import '../../../../styles/variables';
 
 .wrapper {
   padding: 15px;
-  font-family: $font-main;
+  font-family: $font-roboto;
   font-size: $font-size-s;
   line-height: calc(2 * $font-size-s);
   color: $color-font;

@@ -31,3 +31,5 @@ export const useColumns = () => {
     numberOfColumns,
   };
 };
+
+// sobota: 35minut

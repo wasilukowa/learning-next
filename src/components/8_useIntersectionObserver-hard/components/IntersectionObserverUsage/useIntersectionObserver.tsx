@@ -1,16 +1,18 @@
-import { useEffect, useRef } from "react";
-import { TUseIntersectionObserver } from "./types";
+'use client';
+
+import { useEffect, useRef } from 'react';
+import { TUseIntersectionObserver } from './types';
 
 export const useIntersectionObserver: TUseIntersectionObserver = (
   callback,
   options,
 ) => {
-  if (typeof document === "undefined") return;
+  if (typeof document === 'undefined') return;
 
-  const isCallbackFunctionType = typeof callback === "function";
-  if (!isCallbackFunctionType) return;
+  const isCallbackFunctionType = typeof callback === 'function';
+  if (!isCallbackFunctionType) return { referenceForIO: { current: null } };
 
-  const refferenceForIO = useRef<HTMLDivElement | null>(null);
+  const referenceForIO = useRef<HTMLDivElement | null>(null);
 
   const callbackFunction = (entries: IntersectionObserverEntry[]) => {
     entries.map((entry) => {
@@ -21,19 +23,19 @@ export const useIntersectionObserver: TUseIntersectionObserver = (
   };
 
   useEffect(() => {
-    const referenceForIOIsDefined = refferenceForIO.current !== null;
-    if (!referenceForIOIsDefined) return;
+    const referenceForIOIsDefined = referenceForIO.current !== null;
+    if (!referenceForIOIsDefined) return { referenceForIO: { current: null } };
 
     const observer = new IntersectionObserver(callbackFunction, options);
 
-    observer.observe(refferenceForIO.current);
+    observer.observe(referenceForIO.current);
 
     return () => {
-      observer.unobserve(refferenceForIO.current);
+      observer.unobserve(referenceForIO.current);
     };
   }, []);
 
   return {
-    refferenceForIO,
+    referenceForIO,
   };
 };

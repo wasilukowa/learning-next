@@ -1,15 +1,17 @@
-import { Paragraph } from "./Paragraph";
-import { ComponentToObserve } from "./ComponentToObserve";
+'use client';
 
-import { useIntersectionObserverToAddClass } from "./useIntersectionObserverToAddClassHook";
-import { useIntersectionObserver } from "./useIntersectionObserver";
+import { Paragraph } from './Paragraph';
+import { ComponentToObserve } from './ComponentToObserve';
 
-import { TIntersectionObserverToAddClassUsageProps } from "./types";
+import { useIntersectionObserverToAddClass } from './useIntersectionObserverToAddClassHook';
+import { useIntersectionObserver } from './useIntersectionObserver';
 
-import style from "./rwd.module.scss";
+import { TIntersectionObserverToAddClassUsageProps } from './types';
+
+import style from './rwd.module.scss';
 const { wrapper, classActive, wrapperDivToObserve } = style;
 
-const callbackFn = () => console.log("I CAN SEEE YOOOOUUUUU");
+const callbackFn = () => console.log('I CAN SEEE YOOOOUUUUU');
 
 export const IntersectionObserverUsage = ({
   options,
@@ -17,7 +19,7 @@ export const IntersectionObserverUsage = ({
 }: TIntersectionObserverToAddClassUsageProps) => {
   // useIntersectionObserverToAddClass(options, classActive);
 
-  const { refferenceForIO } = useIntersectionObserver(callbackFn, options);
+  const { referenceForIO } = useIntersectionObserver(callbackFn, options);
 
   const firstParagraph = paragraphs[0];
 
@@ -25,7 +27,7 @@ export const IntersectionObserverUsage = ({
     <div className={wrapper}>
       <Paragraph {...paragraphs[0]} />
       <Paragraph {...paragraphs[1]} />
-      <div className={wrapperDivToObserve} ref={refferenceForIO}></div>
+      <div className={wrapperDivToObserve} ref={referenceForIO}></div>
       <ComponentToObserve observeOptions={{ observeOnce: false }}>
         <p>example</p>
       </ComponentToObserve>

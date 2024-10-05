@@ -1,4 +1,4 @@
-import { MutableRefObject } from "react";
+import { MutableRefObject } from 'react';
 
 export type TIntersectionObserverParagrah = {
   id: string;
@@ -26,7 +26,7 @@ export type TUseIntersectionObserverToAddClass = (
 ) => void;
 
 export type UseIntersectionObserverReturn = {
-  refferenceForIO: MutableRefObject<HTMLDivElement | null>;
+  referenceForIO: MutableRefObject<HTMLDivElement | null>;
 };
 
 export type TUseIntersectionObserver = (
