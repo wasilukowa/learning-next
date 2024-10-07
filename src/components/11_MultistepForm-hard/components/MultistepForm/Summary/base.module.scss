@@ -1,0 +1,18 @@
+@import '../../../styles/variables.scss';
+
+.wrapper {
+  padding: 10px;
+  font-family: $font-roboto;
+
+  &Row {
+    padding-top: 10px;
+
+    &Key {
+      padding-right: 6px;
+    }
+
+    &Value {
+      font-weight: 600;
+    }
+  }
+}

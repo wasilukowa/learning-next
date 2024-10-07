@@ -1,0 +1,17 @@
+@import '../../../../../styles/variables';
+
+.wrapper {
+  height: $input-height;
+  width: $input-width;
+
+  margin: 1px;
+  text-align: center;
+
+  border-radius: 0;
+  border: 1px solid $color-input-active-border;
+
+  &:focus {
+    border: 1px solid $color-main;
+    outline: 2px solid $color-main;
+  }
+}

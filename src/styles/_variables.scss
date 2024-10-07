@@ -1,6 +1,7 @@
 $font-roboto: var(--font-roboto);
 
 $color-main: #41b853;
+$color-main-darker: #239935;
 $color-secondary: #efa500;
 $color-tertiary: #f40058;
 $color-dark: #17252a;
@@ -65,3 +66,26 @@ $grid-template-columns: 1fr 3fr 3fr 2fr 40%;
 
 $pagination-button-color: yellow;
 $pagination-button-color-hoover: rgb(129, 129, 7);
+
+// password
+
+$color-input-blocked: #e0e0e0;
+$color-input-active-border: #b9b9b9;
+$color-input-number: #7a7a7a;
+
+$color-invalid-password: rgb(216, 112, 112);
+
+$input-width: 30px;
+$input-height: 50px;
+$input-margin: 3px;
+
+// multistep form
+
+$progress-bar-height: 30px;
+$progress-bar-width: 30px;
+
+$progress-bar-radius: calc($progress-bar-height / 2);
+
+$form-background-color: rgb(226, 226, 226);
+
+$form-button-disabled: rgb(187, 187, 187);

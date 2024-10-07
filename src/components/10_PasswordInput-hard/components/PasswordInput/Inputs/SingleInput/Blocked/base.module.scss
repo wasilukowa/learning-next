@@ -1,0 +1,11 @@
+@import '../../../../../styles/variables';
+
+.wrapper {
+  height: $input-height;
+  width: $input-width;
+
+  margin: 1px;
+  border-radius: 0;
+  border: 1px solid $color-input-blocked;
+  background-color: $color-input-blocked;
+}

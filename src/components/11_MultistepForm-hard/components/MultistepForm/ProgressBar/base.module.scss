@@ -1,0 +1,46 @@
+@import '../../../styles/variables.scss';
+
+.wrapper {
+  width: 100%;
+
+  &StepTitle {
+    // display: inline-block;
+    text-align: center;
+
+    font-family: $font-roboto;
+
+    margin: 10px auto;
+
+    color: grey;
+  }
+
+  &ProgressBar {
+    width: 100vw;
+    min-width: 260px;
+    max-width: 400px;
+    height: $progress-bar-height;
+
+    box-shadow: rgb(200, 208, 231) 3.2px 3.2px 8px 0px inset,
+      rgb(255, 255, 255) -3.2px -3.2px 8px 0px inset;
+
+    border-radius: $progress-bar-radius;
+
+    overflow: hidden;
+
+    margin: 20px auto;
+
+    &StepMarker {
+      display: block;
+      width: $progress-bar-width;
+      height: $progress-bar-height;
+      box-sizing: border-box;
+
+      background-color: $color-main;
+      box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+
+      border-radius: $progress-bar-radius;
+
+      transition-duration: 0.5s;
+    }
+  }
+}
