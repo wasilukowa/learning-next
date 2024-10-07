@@ -1,17 +1,20 @@
 function isObjectType(value: unknown) {
-  const isObject = Object.prototype.toString.call(value) === "[object Object]";
+  const isObject = Object.prototype.toString.call(value) === '[object Object]';
   return isObject;
 }
 
 function isArrayType(value: unknown) {
-  const isArray = Object.prototype.toString.call(value) === "[object Array]";
+  const isArray = Object.prototype.toString.call(value) === '[object Array]';
   return isArray;
 }
 
-function compareObjects(firstObject: object, secondObject: object) {
+function compareObjects(
+  firstObject: Record<string, unknown>,
+  secondObject: Record<string, unknown>,
+) {
   for (const element in firstObject) {
     const isObject =
-      Object.prototype.toString.call(element) === "[object Object]";
+      Object.prototype.toString.call(element) === '[object Object]';
 
     if (isObject) {
       const objectsAreEqual = areObjectsEqual(
@@ -44,7 +47,10 @@ function areArraysEqual(firstValue: Array<any>, secondValue: Array<any>) {
   return true;
 }
 
-function areObjectsEqual(firstValue: object, secondValue: object) {
+function areObjectsEqual(
+  firstValue: Record<string, unknown>,
+  secondValue: Record<string, unknown>,
+) {
   const arePropsFromirstObjectEqualToPropsInSencondObject = compareObjects(
     firstValue,
     secondValue,
@@ -71,13 +77,16 @@ export function areTheyEqual<T>(firstValue: T, secondValue: T) {
   if (bothValuesAreArrays) return areArraysEqual(firstValue, secondValue);
 
   const isFirstValueObject =
-    isObjectType(firstValue) && typeof firstValue === "object";
+    isObjectType(firstValue) && typeof firstValue === 'object';
   const isSecondValueObject =
-    isObjectType(secondValue) && typeof secondValue === "object";
+    isObjectType(secondValue) && typeof secondValue === 'object';
 
   const bothValuesAreObjects = isFirstValueObject && isSecondValueObject;
   if (bothValuesAreObjects)
-    return areObjectsEqual(firstValue as Record<string, unknown>, secondValue);
+    return areObjectsEqual(
+      firstValue as Record<string, unknown>,
+      secondValue as Record<string, unknown>,
+    );
 
   return false;
 }

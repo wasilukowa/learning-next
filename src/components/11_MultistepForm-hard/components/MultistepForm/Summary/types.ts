@@ -1,6 +1,6 @@
-import { TAnswers } from "../../utils/types";
+import { TKeyValueObject } from '../../utils/types';
 
 export type SummaryProps = {
-    answers: TAnswers,
-    inputLabels: TAnswers
-}
+  answers: TKeyValueObject;
+  inputLabels: TKeyValueObject;
+};

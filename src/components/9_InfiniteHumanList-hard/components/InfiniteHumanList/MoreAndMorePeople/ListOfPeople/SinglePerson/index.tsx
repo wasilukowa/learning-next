@@ -1,8 +1,8 @@
-import { Avatar } from "./Avatar";
+import { Avatar } from './Avatar';
 
-import { SinglePersonProps } from "./types";
+import { SinglePersonProps } from './types';
 
-import style from "./rwd.module.scss";
+import style from './rwd.module.scss';
 const { wrapper, wrapperDetails, wrapperDetailsName, wrapperDetailsOther } =
   style;
 
@@ -20,7 +20,7 @@ export const SinglePerson = ({ person }: SinglePersonProps) => {
           <p>{age}</p>
         </div>
       </div>
-      <Avatar source={avatarSrc} />
+      <Avatar avatarSrc={avatarSrc} />
     </div>
   );
 };

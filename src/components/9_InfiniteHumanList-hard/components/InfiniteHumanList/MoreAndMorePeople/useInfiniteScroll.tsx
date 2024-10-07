@@ -1,15 +1,17 @@
 'use client';
+
 import { useEffect, useRef, useState } from 'react';
 import { getUsers, getScrapOfArray } from '../../../utils';
 
 import { TUseInfiniteScroll } from './types';
+import { TPerson } from '../types';
 export const useInfiniteScroll: TUseInfiniteScroll = (
   options,
   initialNumberOfData,
   numberOfDataInSingleLoading,
 ) => {
-  const [initialData, setInitialData] = useState([]);
-  const [dataToDisplay, setDataToDisplay] = useState([]);
+  const [initialData, setInitialData] = useState<TPerson[]>([]);
+  const [dataToDisplay, setDataToDisplay] = useState<TPerson[]>([]);
   const [page, setPage] = useState(0);
   const [isError, setIsError] = useState(false);
   const [isBusy, setIsBusy] = useState(true);

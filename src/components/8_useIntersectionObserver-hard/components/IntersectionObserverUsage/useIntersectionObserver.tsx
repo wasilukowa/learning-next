@@ -7,22 +7,6 @@ export const useIntersectionObserver: TUseIntersectionObserver = (
   callback,
   options,
 ) => {
-  if (typeof document === 'undefined')
-    return { referenceForIO: { current: null } };
-
-  const isCallbackFunctionType = typeof callback === 'function';
-  if (!isCallbackFunctionType) return { referenceForIO: { current: null } };
-
-  const referenceForIO = useRef<HTMLDivElement | null>(null);
-
-  const callbackFunction = (entries: IntersectionObserverEntry[]) => {
-    entries.map((entry) => {
-      if (entry.isIntersecting) {
-        callback();
-      }
-    });
-  };
-
   useEffect(() => {
     const potentialReference = referenceForIO.current;
     const referenceForIOIsDefined = potentialReference !== null;
@@ -36,6 +20,22 @@ export const useIntersectionObserver: TUseIntersectionObserver = (
       observer.unobserve(potentialReference);
     };
   }, []);
+
+  // if (typeof document === 'undefined')
+  //   return { referenceForIO: { current: null } };
+
+  // const isCallbackFunctionType = typeof callback === 'function';
+  // if (!isCallbackFunctionType) return { referenceForIO: { current: null } };
+
+  const referenceForIO = useRef<HTMLDivElement | null>(null);
+
+  const callbackFunction = (entries: IntersectionObserverEntry[]) => {
+    entries.map((entry) => {
+      if (entry.isIntersecting) {
+        callback();
+      }
+    });
+  };
 
   return {
     referenceForIO,

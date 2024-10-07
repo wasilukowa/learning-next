@@ -85,10 +85,10 @@ export const useMultistepForm: TUseMultistepForm = (formData) => {
       });
   };
 
-  const test = 'sdfsd';
-  if (!test) {
-    return;
-  }
+  // const test = 'sdfsd';
+  // if (!test) {
+  //   return;
+  // }
 
   const validate = () => {
     const isErrorsVisibilityObjectDefined = errorsVisibility !== undefined;

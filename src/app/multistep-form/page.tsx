@@ -1,14 +1,23 @@
 import { MultistepForm } from '@/components/11_MultistepForm-hard/components';
+import {
+  TMultistepLabels,
+  TSingleStep,
+} from '@/components/11_MultistepForm-hard/components/MultistepForm/types';
 
-const data = {
-  'navigation-labels': {
-    'next-button-label': 'Next',
-    'prev-button-label': 'Prev',
-    'submit-button-label': 'Submit',
-    'step-naming': 'Step',
-    'summary-naming': 'Summary',
+export type MultistepFormProps = {
+  navigationLabels: TMultistepLabels;
+  formData: TSingleStep[];
+};
+
+const data: MultistepFormProps = {
+  navigationLabels: {
+    nextButtonLabel: 'Next',
+    prevButtonLabel: 'Prev',
+    submitButtonLabel: 'Submit',
+    stepNaming: 'Step',
+    summaryNaming: 'Summary',
   },
-  form: [
+  formData: [
     {
       title: 'Your details',
       questions: [
@@ -140,7 +149,12 @@ const data = {
 };
 
 const MultistepFormPage = () => {
-  return <MultistepForm data={data} />;
+  return (
+    <MultistepForm
+      navigationLabels={data.navigationLabels}
+      formData={data.formData}
+    />
+  );
 };
 
 export default MultistepFormPage;

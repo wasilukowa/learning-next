@@ -17,15 +17,18 @@ export const SingleInput = ({
   passwordReference,
   passwordType,
 }: SingleInputProps) => {
-  const potentialReference = passwordReference.current;
-
-  const potentialReferenceIsDefined = potentialReference !== null;
-  if (!potentialReferenceIsDefined) return null;
-
   useEffect(() => {
+    const potentialReference = passwordReference.current;
+
+    const potentialReferenceIsDefined = potentialReference !== null;
+    if (!potentialReferenceIsDefined) return;
     const isIndexWithinLength = index < potentialReference.length;
     if (!isIndexWithinLength) return;
-  }, [potentialReference]);
+  }, []);
+
+  const potentialReference = passwordReference.current;
+  const potentialReferenceIsDefined = potentialReference !== null;
+  if (!potentialReferenceIsDefined) return null;
 
   const isBlankInput = character === 'BLANK';
   if (isBlankInput)

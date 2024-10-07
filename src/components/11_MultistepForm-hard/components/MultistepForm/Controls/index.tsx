@@ -14,7 +14,7 @@ export const Controls = ({labels, handleStepNumberChange, currentStepNumber, num
             currentStep={currentStepNumber} 
             numberOfSteps={numberOfSteps} 
         />
-        { isSubmitButtonVisible && <SubmitButton submit={submit} label={labels["submit-button-label"]} />}
+        { isSubmitButtonVisible && <SubmitButton submit={submit} label={labels["submitButtonLabel"]} />}
         </>
     )
 }

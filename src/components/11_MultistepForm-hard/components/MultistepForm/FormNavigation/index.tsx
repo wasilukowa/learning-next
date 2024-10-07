@@ -20,13 +20,13 @@ export const NavigationButtons = ({
         isActive={isPrevButtonActive}
         direction="PREV"
         onClickAction={handleStepNumberChange}
-        label={labels['prev-button-label']}
+        label={labels['prevButtonLabel']}
       />
       <Button
         isActive={isNextButtonActive}
         direction="NEXT"
         onClickAction={handleStepNumberChange}
-        label={labels['next-button-label']}
+        label={labels['nextButtonLabel']}
       />
     </div>
   );

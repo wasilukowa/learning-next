@@ -1,4 +1,4 @@
-import { TCoordinate } from '../components/UseGeoUsageExample/types';
+import { TCoordinates } from '../components/UseGeoUsageExample/types';
 
 export const getLocation = (): Promise<TCoordinates> => {
   const location: Promise<TCoordinates> = new Promise((resolve, reject) => {

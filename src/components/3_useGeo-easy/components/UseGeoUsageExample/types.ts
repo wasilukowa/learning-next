@@ -10,11 +10,14 @@ export type UseGeoUsageExampleProps = {
 };
 export type TCoordinate = number | null;
 
-export type TUseGeo = () => UseGeoReturn;
-
-export type UseGeoReturn = {
+export type TCoordinates = {
   latitude: TCoordinate;
   longitude: TCoordinate;
+};
+
+export type TUseGeo = () => UseGeoReturn;
+
+export type UseGeoReturn = Pick<TCoordinates, 'latitude' | 'longitude'> & {
   isBusy: boolean;
   isGeoListening: boolean;
   toggleListening: () => void;

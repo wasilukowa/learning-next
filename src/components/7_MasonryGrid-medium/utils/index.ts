@@ -1,4 +1,4 @@
-const getShortestColumnIndex = (arrayOfHeights) => {
+const getShortestColumnIndex = (arrayOfHeights: number[]) => {
   const smallestVal = Math.min(...arrayOfHeights);
   const result = arrayOfHeights.findIndex((element) => element === smallestVal);
   return result;
@@ -15,10 +15,10 @@ export const splitImagesIntoArrays = <T extends TWithSizeRatio>(
   const isNumberOfArraysIsPositive = numberOfColumns > 0;
   if (!isNumberOfArraysIsPositive) return [];
 
-  const resultArray = Array.from({ length: numberOfColumns }, () => []);
-  const heights = Array.from({ length: numberOfColumns }, () => 0);
+  const resultArray: T[][] = Array.from({ length: numberOfColumns }, () => []);
+  const heights: number[] = Array.from({ length: numberOfColumns }, () => 0);
 
-  images.map((image) => {
+  images.forEach((image) => {
     const shortestColumnIndex = getShortestColumnIndex(heights);
     resultArray[shortestColumnIndex].push(image);
     heights[shortestColumnIndex] =

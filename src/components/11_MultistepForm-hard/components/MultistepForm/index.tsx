@@ -10,10 +10,11 @@ import { MultistepFormProps } from './types';
 import styles from './rwd.module.scss';
 const { wrapper, wrapperForm } = styles;
 
-export const MultistepForm = ({ data }: MultistepFormProps) => {
-  const formData = data.form;
-  console.log(formData);
-
+export const MultistepForm = ({
+  formData,
+  navigationLabels,
+}: MultistepFormProps) => {
+  console.log('form data: ', formData);
   const {
     currentStepNumber,
     numberOfSteps,
@@ -29,14 +30,12 @@ export const MultistepForm = ({ data }: MultistepFormProps) => {
     inputLabels,
   } = useMultistepForm(formData);
 
-  console.log('multistep form: singleStepReference', singleStepReference);
-
   return (
     <div className={wrapper}>
       <ProgressBar
         currentStep={currentStepNumber}
         numberOfSteps={numberOfSteps}
-        stepNaming={data['navigation-labels']['step-naming']}
+        stepNaming={navigationLabels['stepNaming']}
       />
 
       <form className={wrapperForm}>
@@ -51,7 +50,7 @@ export const MultistepForm = ({ data }: MultistepFormProps) => {
           inputLabels={inputLabels}
         />
         <Controls
-          labels={data['navigation-labels']}
+          labels={navigationLabels}
           handleStepNumberChange={handleStepNumberChange}
           currentStepNumber={currentStepNumber}
           numberOfSteps={numberOfSteps}

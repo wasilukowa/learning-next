@@ -1,6 +1,6 @@
 import { TKeyValueObject, TErrorVisibility } from './../utils/types';
 
-type AvailableInputTypes = 'text' | 'number' | 'textArea';
+type AvailableInputTypes = 'text' | 'number' | 'textArea' | 'email';
 
 export type TQuestion = {
   id: string;
@@ -21,22 +21,21 @@ export type TForm = TSingleStep[];
 export type AvailabeDirectionTypes = 'NEXT' | 'PREV';
 
 export type TMultistepLabels = {
-  'next-button-label': string;
-  'prev-button-label': string;
-  'submit-button-label': string;
-  'step-naming': string;
-  'summary-label': string;
+  nextButtonLabel: string;
+  prevButtonLabel: string;
+  submitButtonLabel: string;
+  stepNaming: string;
+  summaryNaming: string;
 };
 
 export type MultistepFormProps = {
-  data: {
-    'navigation-labels': TMultistepLabels;
-    // form: TForm,
-    form: TSingleStep[];
-  };
+  navigationLabels: TMultistepLabels;
+  // form: TForm,
+  formData: TSingleStep[];
 };
 
 export type TUpdateAnswers = (questionId: string, newValue: string) => void;
+
 export type TSingleStepReference =
   | React.MutableRefObject<null | HTMLInputElement[]>
   | undefined;
@@ -63,4 +62,6 @@ export type UseMultistepFormReturn = {
   inputLabels: TKeyValueObject;
 };
 
-export type TUseMultistepForm = (formData: TForm) => UseMultistepFormReturn;
+export type TUseMultistepForm = (
+  formData: TSingleStep[],
+) => UseMultistepFormReturn;
