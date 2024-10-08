@@ -1,5 +1,5 @@
 import { PaginatedTable } from '@/components/6_TableWithPagination-medium/components';
-import { getPaginationDataFromAPI } from '@/lib/data';
+import { getPaginationDataFromAPI } from '@/data/data';
 
 const PaginatedTablePage = async () => {
   const paginationData = await getPaginationDataFromAPI();

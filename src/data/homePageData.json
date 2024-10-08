@@ -1,18 +1,5 @@
 {
-  "home": {
-    "name": "Home Page",
-    "id": "home",
-    "url": "/",
-    "data": {
-      "header": {
-        "mobileNavigationBoundaryWidth": 600
-      },
-      "page": {
-        "welcomeScreenTitle": "WELCOME to LHA tasks solutions!"
-      }
-    }
-  },
-  "rating-stars": {
+  "ratingStars": {
     "name": "Rating Stars",
     "id": "rating-stars",
     "url": "/rating-stars",
@@ -106,7 +93,7 @@
     }
   },
 
-  "use-memo": {
+  "useMemo": {
     "name": "UseMemo Hook usage",
     "id": "use-memo",
     "url": "/use-memo",
@@ -134,7 +121,7 @@
     }
   },
 
-  "use-geo": {
+  "useGeo": {
     "name": "UseGeo Hook usage",
     "id": "use-geo",
     "url": "/use-geo",
@@ -172,7 +159,7 @@
     }
   },
 
-  "search": {
+  "searchWithDropdown": {
     "name": "Search with dropdown",
     "id": "search",
     "url": "/search",
@@ -222,7 +209,7 @@
     }
   },
 
-  "pagination-table": {
+  "tableWithPagination": {
     "name": "Table with pagination",
     "id": "pagination-table",
     "url": "/paginated-table",
@@ -1012,7 +999,7 @@
     }
   },
 
-  "masonry-grid": {
+  "masonryGrid": {
     "name": "Masonry grid",
     "id": "masonry-grid",
     "url": "/masonry-grid",
@@ -1152,7 +1139,7 @@
     }
   },
 
-  "intersection-observer": {
+  "useIntersectionObserver": {
     "name": "useIntersectionObserver",
     "id": "intersection-observer",
     "url": "/intersection-observer",
@@ -1196,7 +1183,7 @@
     }
   },
 
-  "infinite-human-list": {
+  "infiniteHumanList": {
     "name": "Infinite Human List",
     "id": "infinite-human-list",
     "url": "/infinite-human-list",
@@ -1215,7 +1202,7 @@
     }
   },
 
-  "password-input": {
+  "passwordInput": {
     "name": "Password Input",
     "id": "password-input",
     "url": "/password-input",
@@ -1233,7 +1220,7 @@
     }
   },
 
-  "multistep-form": {
+  "multistepForm": {
     "name": "Multistep Form",
     "id": "multistep-form",
     "url": "/multistep-form",

@@ -2,12 +2,12 @@
   "name": "learning-next",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "start-server": "next ./data/server.ts"
+    "lint": "next lint"
   },
   "dependencies": {
     "clsx": "^2.1.1",
