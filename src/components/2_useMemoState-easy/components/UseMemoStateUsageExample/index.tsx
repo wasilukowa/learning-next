@@ -1,5 +1,10 @@
 'use client';
 
+import { useMemoState } from './useMemoState';
+import { Input } from './Input';
+import { InputSelection } from './InputSelection';
+import { Explanation } from './Explanation';
+
 import style from './rwd.module.scss';
 
 const {
@@ -9,11 +14,6 @@ const {
   wrapperError,
   wrapperButton,
 } = style;
-
-import { useMemoState } from './useMemoState';
-import { Input } from './Input';
-import { InputSelection } from './InputSelection';
-import { Explanation } from './Explanation';
 
 export const UseMemoStateUsageExample = () => {
   const {

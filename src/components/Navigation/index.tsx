@@ -12,59 +12,59 @@ const routes = [
   {
     name: 'Rating Stars',
     id: 'rating-stars',
-    url: '/rating-stars',
+    url: '/1-rating-stars',
   },
 
   {
     name: 'UseMemo Hook usage',
     id: 'use-memo',
-    url: '/use-memo',
+    url: '/2-use-memo',
   },
   {
     name: 'UseGeo Hook usage',
     id: 'use-geo',
-    url: '/use-geo',
+    url: '/3-use-geo',
   },
   {
     name: 'Modal',
     id: 'modal',
-    url: '/modal',
+    url: '/4-modal',
   },
 
   {
     name: 'Search with dropdown',
     id: 'search',
-    url: '/search',
+    url: '/5-search',
   },
   {
     name: 'Table with pagination',
     id: 'pagination-table',
-    url: '/paginated-table',
+    url: '/6-paginated-table',
   },
   {
     name: 'Masonry grid',
     id: 'masonry-grid',
-    url: '/masonry-grid',
+    url: '/7-masonry-grid',
   },
   {
     name: 'useIntersectionObserver',
     id: 'intersection-observer',
-    url: '/intersection-observer',
+    url: '/8-intersection-observer',
   },
   {
     name: 'Infinite Human List',
     id: 'infinite-human-list',
-    url: '/infinite-human-list',
+    url: '/9-infinite-human-list',
   },
   {
     name: 'Password Input',
     id: 'password-input',
-    url: '/password-input',
+    url: '/10-password-input',
   },
   {
     name: 'Multistep Form',
     id: 'multistep-form',
-    url: '/multistep-form',
+    url: '/11-multistep-form',
   },
 ];
 
