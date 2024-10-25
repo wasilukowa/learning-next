@@ -5,9 +5,5 @@ export default async function UseGeoPage() {
   const data = await getUseGeoDataFromAPI();
   const { labels } = data;
 
-  return (
-    <>
-      <UseGeoUsageExample labels={labels} />
-    </>
-  );
+  return <UseGeoUsageExample labels={labels} />;
 }

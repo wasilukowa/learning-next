@@ -1,24 +1,15 @@
 import { PasswordInput } from '@/components/10_PasswordInput-hard/components';
-
-const data = {
-  password: 'Password',
-  buttonLabels: {
-    checkIfValidLabel: 'Check',
-    showCharactersLabel: 'Show characters',
-    cleanInputsLabel: 'Clean inputs',
-  },
-  statements: {
-    validPasswordStatement: 'Password is correct!',
-    invalidPasswordStatement: 'Password is invalid, please try again',
-  },
-};
+import { getPasswordInoutDataFromAPI } from '@/data/data';
 
 const PasswordInputPage = async () => {
+  const data = await getPasswordInoutDataFromAPI();
+  const { password, buttonLabels, statements } = data;
+
   return (
     <PasswordInput
-      password={data.password}
-      buttonLabels={data.buttonLabels}
-      statements={data.statements}
+      password={password}
+      buttonLabels={buttonLabels}
+      statements={statements}
     />
   );
 };

@@ -1225,14 +1225,14 @@
     "id": "multistep-form",
     "url": "/multistep-form",
     "data": {
-      "navigation-labels": {
+      "navigationLabels": {
         "next-button-label": "Next",
         "prev-button-label": "Prev",
         "submit-button-label": "Submit",
         "step-naming": "Step",
         "summary-naming": "Summary"
       },
-      "form": [
+      "formData": [
         {
           "title": "Your details",
           "questions": [

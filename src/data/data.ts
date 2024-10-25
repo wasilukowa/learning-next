@@ -1,4 +1,4 @@
-export const getDataFromAPI = async (path: string, signal: AbortSignal) => {
+const getDataFromAPI = async (path: string, signal: AbortSignal) => {
   try {
     const data = await fetch(path, {
       cache: 'force-cache',
@@ -16,74 +16,41 @@ export const getDataFromAPI = async (path: string, signal: AbortSignal) => {
     }
   }
 };
+// Funkcja pomocnicza do obsługi wywołań API z AbortController
+const fetchDataWithAbort = async (path: string, timeout: number = 2000) => {
+  const controller = new AbortController();
+  const { signal } = controller;
 
-// export const getNavigationItemsFromAPI = () =>
-//   getDataFromAPI('http://localhost:3001/api/data/navigationMenu');
+  // Ustaw timeout
+  setTimeout(() => controller.abort(), timeout);
 
-export const getRatingStarsFromAPI = async () => {
   try {
-    const controller = new AbortController();
-    const { signal } = controller;
-
-    new Promise((resolve) => setTimeout(resolve, 2000));
-    const data = await getDataFromAPI(
-      'http://localhost:3001/api/data/ratingStars',
-      signal,
-    );
-    controller.abort();
-    return data;
+    return await getDataFromAPI(path, signal);
   } catch (err) {
-    console.error(err);
+    console.error(`Error fetching data from ${path}:`, err);
   }
 };
 
-export const getUseGeoDataFromAPI = async () => {
-  try {
-    const controller = new AbortController();
-    const { signal } = controller;
-
-    const data = await getDataFromAPI(
-      'http://localhost:3001/api/data/useGeo',
-      signal,
-    );
-    console.log(data);
-    controller.abort();
-    return data;
-  } catch (err) {
-    console.error(err);
-  }
-};
-
-export const getSearchDataAPI = async () => {
-  try {
-    const controller = new AbortController();
-    const { signal } = controller;
-
-    new Promise((resolve) => setTimeout(resolve, 2000));
-    const data = await getDataFromAPI(
-      'http://localhost:3001/api/data/searchData',
-      signal,
-    );
-    controller.abort();
-    return data;
-  } catch (err) {
-    console.error(err);
-  }
-};
-
-export const getPaginationDataFromAPI = async () => {
-  try {
-    const controller = new AbortController();
-    const { signal } = controller;
-
-    new Promise((resolve) => setTimeout(resolve, 2000));
-    const data = await getDataFromAPI(
-      'http://localhost:3001/api/data/pagination-table',
-      signal,
-    );
-    controller.abort();
-    return data;
-  } catch (err) {
-    console.error(err);
-  }
-};
+// Funkcje wywołujące API
+export const getNavigationItemsFromAPI = () =>
+  fetchDataWithAbort('http://localhost:3001/api/data/navigationMenu');
+export const getRatingStarsFromAPI = () =>
+  fetchDataWithAbort('http://localhost:3001/api/data/ratingStars');
+export const getUseGeoDataFromAPI = () =>
+  fetchDataWithAbort('http://localhost:3001/api/data/useGeo');
+export const getSearchDataAPI = () =>
+  fetchDataWithAbort('http://localhost:3001/api/data/searchData');
+export const getPaginationDataFromAPI = () =>
+  fetchDataWithAbort('http://localhost:3001/api/data/pagination-table');
+export const getModalDataFromAPI = () =>
+  fetchDataWithAbort('http://localhost:3001/api/data/modal');
+export const getMasonryGridFromAPI = () =>
+  fetchDataWithAbort('http://localhost:3001/api/data/masonry-grid');
+export const getIntersectionObserverDataFromAPI = () =>
+  fetchDataWithAbort('http://localhost:3001/api/data/intersection-observer');
+export const getInfiniteHumanListData = () =>
+  fetchDataWithAbort('http://localhost:3001/api/data/infinite-human-list');
+export const getPasswordInputDataFromAPI = () =>
+  fetchDataWithAbort('http://localhost:3001/api/data/password-input');
+export const getMultistepFormData = () =>
+  fetchDataWithAbort('http://localhost:3001/api/data/multistep-form');

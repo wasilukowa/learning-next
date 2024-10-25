@@ -12,3 +12,11 @@ export const createNavigationData = (data) => {
 
   return navigationItems;
 };
+
+import data from './homePageData.json' assert { type: 'json' };
+
+export const createDataEndpoint = (app, path, key) => {
+  app.get(path, (req, res) => {
+    res.json(data[key]?.data || {});
+  });
+};

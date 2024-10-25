@@ -1,4 +1,5 @@
 'use client';
+
 import { ErrorMessage } from './ErrorMessage';
 import { ListOfPeople } from './ListOfPeople';
 import { Loading } from './Loading';

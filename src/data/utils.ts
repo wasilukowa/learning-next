@@ -59,6 +59,7 @@ type TData = {
   };
 };
 
+import { Application } from 'express';
 export const createNavigationData = (data: TData) => {
   const navigationItems: TSingleDataItemInformation[] = [];
   Object.keys(data).forEach((key) => {
@@ -69,5 +70,17 @@ export const createNavigationData = (data: TData) => {
       url: item.url,
     };
     navigationItems.push(newItem);
+  });
+};
+
+import data from './homePageData.json' assert { type: 'json' };
+
+export const createDataEndpoint = (
+  app: Application,
+  path: string,
+  key: string,
+) => {
+  app.get(path, (req, res) => {
+    res.json(data[key]?.data || {});
   });
 };

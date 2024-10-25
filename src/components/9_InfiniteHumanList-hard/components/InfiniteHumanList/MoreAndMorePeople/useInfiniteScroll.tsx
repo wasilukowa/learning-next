@@ -5,6 +5,7 @@ import { getUsers, getScrapOfArray } from '../../../utils';
 
 import { TUseInfiniteScroll } from './types';
 import { TPerson } from '../types';
+
 export const useInfiniteScroll: TUseInfiniteScroll = (
   options,
   initialNumberOfData,
