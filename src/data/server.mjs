@@ -633,6 +633,10 @@ app.get('/api/data/searchData', (req, res) => {
   res.json(data.searchWithDropdown.data);
 });
 
+app.get('/api/data/useGeo', (req, res) => {
+  res.json(data.useGeo.data);
+});
+
 // app.get('/api/data/pagination-table', (req, res) => {
 //   res.json(paginationData);
 // });

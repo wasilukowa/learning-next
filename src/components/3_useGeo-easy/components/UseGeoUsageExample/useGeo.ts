@@ -4,7 +4,6 @@ import { TCoordinate } from './types';
 import { TUseGeo } from './types';
 
 export const useGeo: TUseGeo = () => {
-  console.log('uruchamiam UseGeo');
   const [jsEnabled, setJsEnabled] = useState(false);
 
   useEffect(() => {
@@ -23,6 +22,10 @@ export const useGeo: TUseGeo = () => {
   const [latitude, setLatitude] = useState<TCoordinate>(null);
   const [isError, setIsError] = useState<boolean>(false);
 
+  function delay(t: number) {
+    return new Promise((resolve) => setTimeout(resolve, t));
+  }
+
   useEffect(() => {
     const isJsDefined = typeof window !== 'undefined';
     if (!isJsDefined) return;
@@ -33,9 +36,12 @@ export const useGeo: TUseGeo = () => {
       setIsBusy(true);
       watchId = navigator.geolocation.watchPosition(
         (position) => {
-          const { latitude, longitude } = position.coords;
-          setLongitude(longitude);
-          setLatitude(latitude);
+          delay(2000).then(() => {
+            const { latitude, longitude } = position.coords;
+            setLongitude(longitude);
+            setLatitude(latitude);
+            setIsBusy(false);
+          });
         },
         (error) => {
           setIsError(true);
@@ -47,19 +53,20 @@ export const useGeo: TUseGeo = () => {
         },
       );
 
-      return;
+      // return;
     }
 
     // Ustawienie lokalizacji na null, gdy przestajesz nasłuchiwać
-    setLongitude(null);
-    setLatitude(null);
+    // setLongitude(null);
+    // setLatitude(null);
 
     return () => {
       // Czyszczenie obserwatora po wyłączeniu nasłuchiwania
-      navigator.geolocation.clearWatch(watchId);
       setIsBusy(false);
+      console.log(isBusy);
       setLongitude(null);
       setLatitude(null);
+      navigator.geolocation.clearWatch(watchId);
     };
   }, [isGeoListening]);
 

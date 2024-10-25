@@ -37,6 +37,23 @@ export const getRatingStarsFromAPI = async () => {
   }
 };
 
+export const getUseGeoDataFromAPI = async () => {
+  try {
+    const controller = new AbortController();
+    const { signal } = controller;
+
+    const data = await getDataFromAPI(
+      'http://localhost:3001/api/data/useGeo',
+      signal,
+    );
+    console.log(data);
+    controller.abort();
+    return data;
+  } catch (err) {
+    console.error(err);
+  }
+};
+
 export const getSearchDataAPI = async () => {
   try {
     const controller = new AbortController();

@@ -1,9 +1,13 @@
-import { UseGeoUsageExample } from '../../components/3_useGeo-easy/components';
+import { UseGeoUsageExample } from '@/components/3_useGeo-easy/components';
+import { getUseGeoDataFromAPI } from '@/data/data';
 
-import data from '../../data/homePageData.json';
+export default async function UseGeoPage() {
+  const data = await getUseGeoDataFromAPI();
+  const { labels } = data;
 
-export default function UseGeoPage() {
-  const geoLabels = data['useGeo'].data.labels;
-
-  return <UseGeoUsageExample labels={geoLabels} />;
+  return (
+    <>
+      <UseGeoUsageExample labels={labels} />
+    </>
+  );
 }
