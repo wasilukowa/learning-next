@@ -14,7 +14,6 @@ export const MultistepForm = ({
   formData,
   navigationLabels,
 }: MultistepFormProps) => {
-  console.log('form data: ', formData);
   const {
     currentStepNumber,
     numberOfSteps,

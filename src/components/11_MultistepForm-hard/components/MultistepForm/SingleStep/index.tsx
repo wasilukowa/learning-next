@@ -20,7 +20,7 @@ export const SingleStep = ({
   if (!isVisible)
     return <Summary answers={answers} inputLabels={inputLabels} />;
 
-  console.log('singleStepReference', singleStepReference);
+  console.log('sINGLE sTEP: singleStepReference', singleStepReference);
 
   return (
     <div className={wrapper}>

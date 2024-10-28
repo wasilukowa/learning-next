@@ -1,8 +1,8 @@
 import { PasswordInput } from '@/components/10_PasswordInput-hard/components';
-import { getPasswordInoutDataFromAPI } from '@/data/data';
+import { getPasswordInputDataFromAPI } from '@/data/data';
 
 const PasswordInputPage = async () => {
-  const data = await getPasswordInoutDataFromAPI();
+  const data = await getPasswordInputDataFromAPI();
   const { password, buttonLabels, statements } = data;
 
   return (

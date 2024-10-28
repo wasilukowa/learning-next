@@ -140,6 +140,8 @@ export const useMultistepForm: TUseMultistepForm = (formData) => {
     });
   };
 
+  console.log(singleStepReference);
+
   return {
     currentStepNumber,
     numberOfSteps,

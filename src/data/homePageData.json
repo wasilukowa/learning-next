@@ -1226,11 +1226,11 @@
     "url": "/multistep-form",
     "data": {
       "navigationLabels": {
-        "next-button-label": "Next",
-        "prev-button-label": "Prev",
-        "submit-button-label": "Submit",
-        "step-naming": "Step",
-        "summary-naming": "Summary"
+        "nextButtonLabel": "Next",
+        "prevButtonLabel": "Prev",
+        "submitButtonLabel": "Submit",
+        "stepNaming": "Step",
+        "summaryNaming": "Summary"
       },
       "formData": [
         {

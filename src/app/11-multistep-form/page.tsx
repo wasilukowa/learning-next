@@ -9,6 +9,7 @@ export type MultistepFormProps = {
   navigationLabels: TMultistepLabels;
   formData: TSingleStep[];
 };
+
 const MultistepFormPage = async () => {
   const data = await getMultistepFormData();
   const { navigationLabels, formData } = data;

@@ -16,12 +16,14 @@ export const TextInput = ({
   index,
   inputData,
 }: TextInputProps) => {
-  console.log('singleFormStepReference:', singleFormStepReference);
+  // console.log('Text input: singleFormStepReference:', singleFormStepReference);
 
   const potentialReference = singleFormStepReference;
+  console.log('potential reference:', potentialReference);
   if (!potentialReference) return null;
 
   const potentialReferenceCurrent = potentialReference.current;
+  console.log('potential current: ', potentialReferenceCurrent);
   if (!potentialReferenceCurrent) return null;
 
   return (
@@ -42,6 +44,7 @@ export const TextInput = ({
             if (!isReferenceDefined) return;
             potentialReferenceCurrent[index] = reference;
           }}
+          // ref={textInputReference}
         />
       </div>
       <ErrorMessage
